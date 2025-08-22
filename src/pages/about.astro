@@ -1,0 +1,415 @@
+---
+import H1 from "../components/h1.astro";
+import RootLayout from "../layouts/RootLayout.astro";
+import SplineScene from "../components/SplineScene";
+import Footer from "../components/footer.astro";
+import DotGrid from "../components/dot-grid";
+
+const defaultTitle = "About - Sourodip Kar";
+const defaultDescription = "Learn more about Sourodip Kar, a software engineer passionate about building innovative solutions.";
+---
+
+<RootLayout title={defaultTitle} description={defaultDescription}>
+     <!-- Single DotGrid Background for entire page -->
+     <div class="fixed inset-0 -z-10 dot-grid-container">
+          <DotGrid
+               className="w-full h-full"
+               client:load
+          />
+     </div>
+
+     <!-- Two-column layout: Left for SplineScene, Right for content + footer -->
+     <div class="min-h-screen flex flex-col lg:flex-row relative single-page-layout">
+          
+          <!-- Left Column - Dedicated SplineScene Area -->
+          <div class="w-full lg:w-2/4 h-[40vh] sm:h-[45vh] md:h-[50vh] lg:h-[90vh] relative overflow-hidden absolute inset-0 lg:relative" transition:persist="spline-scene">
+               <SplineScene client:load />
+          </div>
+
+          <!-- Right Column - Content + Footer (like original contact page) -->
+          <div class="w-full lg:w-1/2 flex flex-col relative z-10 max-h-screen lg:max-h-none overflow-hidden lg:overflow-visible">
+               <!-- Content Area -->
+               <div class="flex-1 p-3 sm:p-4 lg:p-6 flex items-center pt-[37vh] sm:pt-[22vh] md:pt-[10vh] lg:pt-6 max-h-[calc(100vh-100px)] lg:max-h-none overflow-y-auto lg:overflow-visible">
+                    <div class="w-full max-w-3xl space-y-4 sm:space-y-5 lg:space-y-8 h-full overflow-y-auto lg:overflow-visible">
+                         <!-- Intro Section -->
+                         <div class="space-y-4 lg:space-y-5">
+                              <H1 className="text-xl sm:text-2xl lg:text-4xl font-bold"> Hello </H1>
+                              <div class="intro-card">
+                                   <!-- Border gradient elements -->
+                                   <div class="intro-right-border"></div>
+                                   <div class="intro-bottom-border"></div>
+                                   
+                                   <p class="text-sm sm:text-base lg:text-lg text-zinc-300 leading-relaxed font-light " style="font-family: 'Space Mono', monospace;">
+                                        I’m Sourodip Kar, a 22-year-old full-stack developer specializing in AI/ML. Currently interning at ISRO’s Space Applications Center (Ahmedabad), where I work on computer vision and ML pipelines for satellite imagery. Passionate about technology, entrepreneurship, and building impactful SaaS products.
+                                   </p>
+                              </div>
+                         </div>
+
+                         <!-- Achievements Section -->
+                         <div class="space-y-4">
+                              <h2 class="text-lg sm:text-xl lg:text-2xl font-bold text-zinc-200 flex items-center gap-2" style="font-family: 'Audiowide', monospace;">
+                              <h2 class="text-base sm:text-lg lg:text-2xl font-bold text-zinc-200 flex items-center gap-2" style="font-family: 'Audiowide', monospace;">
+                                   <span class="w-6 h-6 rounded-lg flex items-center justify-center" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);">
+                                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                             <path d="M5.5 8C6.88071 8 8 6.88071 8 5.5C8 4.11929 6.88071 3 5.5 3C4.11929 3 3 4.11929 3 5.5C3 6.88071 4.11929 8 5.5 8ZM5.5 8V16M5.5 8C5.5 10.2091 7.29086 12 9.5 12H16M5.5 16C4.11929 16 3 17.1193 3 18.5C3 19.8807 4.11929 21 5.5 21C6.88071 21 8 19.8807 8 18.5C8 17.1193 6.88071 16 5.5 16ZM16 12C16 13.3807 17.1193 14.5 18.5 14.5C19.8807 14.5 21 13.3807 21 12C21 10.6193 19.8807 9.5 18.5 9.5C17.1193 9.5 16 10.6193 16 12Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                        </svg>
+                                   </span>
+                                   Achievements
+                              </h2>
+                              
+                              <div class="achievements-card" >
+                                   <!-- Border gradient elements -->
+                                   <div class="achievements-right-border"></div>
+                                   <div class="achievements-bottom-border"></div>
+                                   
+                                   <ul class="space-y-2 lg:space-y-3 achievements-list">
+                                        <li class="flex items-start gap-2 group">
+                                             <div class="flex-shrink-0 w-5 h-5 mt-0.5 opacity-70 group-hover:opacity-100 transition-opacity duration-200">
+                                                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                       <path d="M5.5 8C6.88071 8 8 6.88071 8 5.5C8 4.11929 6.88071 3 5.5 3C4.11929 3 3 4.11929 3 5.5C3 6.88071 4.11929 8 5.5 8ZM5.5 8V16M5.5 8C5.5 10.2091 7.29086 12 9.5 12H16M5.5 16C4.11929 16 3 17.1193 3 18.5C3 19.8807 4.11929 21 5.5 21C6.88071 21 8 19.8807 8 18.5C8 17.1193 6.88071 16 5.5 16ZM16 12C16 13.3807 17.1193 14.5 18.5 14.5C19.8807 14.5 21 13.3807 21 12C21 10.6193 19.8807 9.5 18.5 9.5C17.1193 9.5 16 10.6193 16 12Z" stroke="#6b7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                  </svg>
+                                             </div>
+                                             <span class="text-xs sm:text-base lg:text-base text-zinc-400 leading-relaxed group-hover:text-zinc-300 transition-colors duration-200" style="font-family: 'Space Mono', monospace;">
+                                                  Finalist – ISRO Bharatiya Antariksh Hackathon 2024 & Smart Bengal Hackathon 2023
+                                             </span>
+                                        </li>
+                                        
+                                        <li class="flex items-start gap-2 group">
+                                             <div class="flex-shrink-0 w-5 h-5 mt-0.5 opacity-70 group-hover:opacity-100 transition-opacity duration-200">
+                                                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                       <path d="M5.5 8C6.88071 8 8 6.88071 8 5.5C8 4.11929 6.88071 3 5.5 3C4.11929 3 3 4.11929 3 5.5C3 6.88071 4.11929 8 5.5 8ZM5.5 8V16M5.5 8C5.5 10.2091 7.29086 12 9.5 12H16M5.5 16C4.11929 16 3 17.1193 3 18.5C3 19.8807 4.11929 21 5.5 21C6.88071 21 8 19.8807 8 18.5C8 17.1193 6.88071 16 5.5 16ZM16 12C16 13.3807 17.1193 14.5 18.5 14.5C19.8807 14.5 21 13.3807 21 12C21 10.6193 19.8807 9.5 18.5 9.5C17.1193 9.5 16 10.6193 16 12Z" stroke="#6b7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                  </svg>
+                                             </div>
+                                             <span class="text-xs sm:text-base lg:text-base text-zinc-400 leading-relaxed group-hover:text-zinc-300 transition-colors duration-200" style="font-family: 'Space Mono', monospace;">
+                                                  IEEE Xplore Author (2024) – Deep Learning for Medical Imaging
+                                             </span>
+                                        </li>
+                                        
+                                        <li class="flex items-start gap-2 group">
+                                             <div class="flex-shrink-0 w-5 h-5 mt-0.5 opacity-70 group-hover:opacity-100 transition-opacity duration-200">
+                                                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                       <path d="M5.5 8C6.88071 8 8 6.88071 8 5.5C8 4.11929 6.88071 3 5.5 3C4.11929 3 3 4.11929 3 5.5C3 6.88071 4.11929 8 5.5 8ZM5.5 8V16M5.5 8C5.5 10.2091 7.29086 12 9.5 12H16M5.5 16C4.11929 16 3 17.1193 3 18.5C3 19.8807 4.11929 21 5.5 21C6.88071 21 8 19.8807 8 18.5C8 17.1193 6.88071 16 5.5 16ZM16 12C16 13.3807 17.1193 14.5 18.5 14.5C19.8807 14.5 21 13.3807 21 12C21 10.6193 19.8807 9.5 18.5 9.5C17.1193 9.5 16 10.6193 16 12Z" stroke="#6b7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                  </svg>
+                                             </div>
+                                             <span class="text-xs sm:text-base lg:text-base text-zinc-400 leading-relaxed group-hover:text-zinc-300 transition-colors duration-200" style="font-family: 'Space Mono', monospace;">
+                                                  IEEE Xplore Author (2025) – Geospatial AI with Speech Commands
+                                             </span>
+                                        </li>
+                                        
+                                        <li class="flex items-start gap-2 group">
+                                             <div class="flex-shrink-0 w-5 h-5 mt-0.5 opacity-70 group-hover:opacity-100 transition-opacity duration-200">
+                                                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                       <path d="M5.5 8C6.88071 8 8 6.88071 8 5.5C8 4.11929 6.88071 3 5.5 3C4.11929 3 3 4.11929 3 5.5C3 6.88071 4.11929 8 5.5 8ZM5.5 8V16M5.5 8C5.5 10.2091 7.29086 12 9.5 12H16M5.5 16C4.11929 16 3 17.1193 3 18.5C3 19.8807 4.11929 21 5.5 21C6.88071 21 8 19.8807 8 18.5C8 17.1193 6.88071 16 5.5 16ZM16 12C16 13.3807 17.1193 14.5 18.5 14.5C19.8807 14.5 21 13.3807 21 12C21 10.6193 19.8807 9.5 18.5 9.5C17.1193 9.5 16 10.6193 16 12Z" stroke="#6b7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                  </svg>
+                                             </div>
+                                             <span class="text-xs sm:text-base lg:text-base text-zinc-400 leading-relaxed group-hover:text-zinc-300 transition-colors duration-200" style="font-family: 'Space Mono', monospace;">
+                                                  Student Ambassador – Idea-o-meter
+                                             </span>
+                                        </li>
+                                        
+                                        <li class="flex items-start gap-2 group">
+                                             <div class="flex-shrink-0 w-5 h-5 mt-0.5 opacity-70 group-hover:opacity-100 transition-opacity duration-200">
+                                                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                       <path d="M5.5 8C6.88071 8 8 6.88071 8 5.5C8 4.11929 6.88071 3 5.5 3C4.11929 3 3 4.11929 3 5.5C3 6.88071 4.11929 8 5.5 8ZM5.5 8V16M5.5 8C5.5 10.2091 7.29086 12 9.5 12H16M5.5 16C4.11929 16 3 17.1193 3 18.5C3 19.8807 4.11929 21 5.5 21C6.88071 21 8 19.8807 8 18.5C8 17.1193 6.88071 16 5.5 16ZM16 12C16 13.3807 17.1193 14.5 18.5 14.5C19.8807 14.5 21 13.3807 21 12C21 10.6193 19.8807 9.5 18.5 9.5C17.1193 9.5 16 10.6193 16 12Z" stroke="#6b7280" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                                                  </svg>
+                                             </div>
+                                             <span class="text-xs sm:text-base lg:text-base text-zinc-400 leading-relaxed group-hover:text-zinc-300 transition-colors duration-200" style="font-family: 'Space Mono', monospace;">
+                                                  Member – IETE (Institution of Electronics & Telecommunication Engineers)
+                                             </span>
+                                        </li>
+                                   </ul>
+                              </div>
+                         </div>
+                    </div>
+               </div>          
+          </div>
+     </div>
+     <!-- Footer with mobile-friendly spacing -->
+     <div class="px-3 sm:px-4 lg:px-0 relative z-20 flex-shrink-0">
+          <Footer />
+     </div>
+</RootLayout>
+
+<style>
+/* Make page unscrollable for normal screens (desktop/laptop) */
+@media (min-width: 1024px) {
+     body, html {
+          overflow: hidden !important;
+          height: 100vh !important;
+     }
+     
+     .single-page-layout {
+          height: 100vh !important;
+          overflow: hidden !important;
+     }
+}
+
+/* Intro Card Styles */
+.intro-card {
+     background: transparent;
+     backdrop-filter: blur(8px);
+     border: 1px solid rgba(63, 63, 70, 0.5);
+     border-radius: 0px;
+     padding: 1.5rem 2rem;
+     position: relative;
+     overflow: hidden;
+     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%);
+     box-shadow: 
+          0 10px 40px rgba(0, 0, 0, 0.3),
+          0 0 0 1px rgba(255, 255, 255, 0.05);
+}
+
+.intro-card::after {
+     content: '';
+     position: absolute;
+     bottom: -1px;
+     right: 30px;
+     width: 2px;
+     height: 43px;
+     background: rgb(255, 255, 255);
+     transform: rotate(45deg);
+     transform-origin: bottom;
+     z-index: 10;
+}
+
+.intro-card::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     height: 1px;
+     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+     box-shadow: 0 -10px 30px rgba(255, 255, 255, 0.8), 0 -5px 15px rgba(255, 255, 255, 0.9);
+}
+
+/* Intro right border gradient */
+.intro-right-border {
+     position: absolute;
+     top: 0;
+     right: -1px;
+     width: 2px;
+     height: calc(100% - 15px);
+     background: linear-gradient(10deg, rgba(255, 255, 255) 30%, transparent, transparent, transparent);
+     z-index: 2;
+}
+
+/* Intro bottom border gradient */
+.intro-bottom-border {
+     position: absolute;
+     bottom: -1px;
+     right: -240px;
+     width: calc(100% - 15px);
+     height: 2px;
+     background: linear-gradient(10deg,transparent, transparent, transparent, rgba(255, 255, 255) 30%);
+     z-index: 2;
+}
+
+/* Achievements Card Styles */
+.achievements-card {
+     background: transparent;
+     backdrop-filter: blur(2px);
+     border: 1px solid rgba(63, 63, 70, 0.3);
+     border-radius: 0px;
+     padding: 1.25rem 1.5rem;
+     position: relative;
+     overflow: hidden;
+     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 25px), calc(100% - 25px) 100%, 0 100%);
+     box-shadow: 
+          0 8px 30px rgba(0, 0, 0, 0.2),
+          0 0 0 1px rgba(255, 255, 255, 0.03);
+}
+
+.achievements-card::after {
+     content: '';
+     position: absolute;
+     bottom: -1px;
+     right: 25px;
+     width: 1.5px;
+     height: 36px;
+     background: rgb(255, 255, 255);
+     transform: rotate(45deg);
+     transform-origin: bottom;
+     z-index: 10;
+}
+
+.achievements-card::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     height: 1px;
+     background: linear-gradient(90deg, transparent, rgba(255, 255, 255), transparent);
+     box-shadow: 0 -8px 25px rgba(255, 255, 255, 0.6), 0 -4px 12px rgba(255, 255, 255, 0.7);
+}
+
+/* Achievements right border gradient */
+.achievements-right-border {
+     position: absolute;
+     top: 0;
+     right: -1px;
+     width: 3px;
+     height: calc(100% - 12px);
+     background: linear-gradient(10deg, rgba(255, 255, 255) 30%, transparent, transparent, transparent);
+     z-index: 2;
+}
+
+/* Achievements bottom border gradient */
+.achievements-bottom-border {
+     position: absolute;
+     bottom: -0.9px;
+     right: -200px;
+     width: calc(100% - 20px);
+     height: 1.5px;
+     background: linear-gradient(10deg,transparent, transparent, transparent, rgba(255, 255, 255) 30%);
+     z-index: 2;
+}
+
+/* Mobile Responsive - Comprehensive Screen Size Coverage */
+
+/* Essential responsive breakpoints only */
+
+/* Mobile devices (up to 640px) */
+@media (max-width: 640px) {
+     [style*="font-family: 'Space Mono'"] {
+          font-size: 0.75rem !important;
+     }
+     
+     .intro-card, .achievements-card {
+          padding: 1rem 1.25rem;
+          clip-path: polygon(0 0, 100% 0, 100% calc(100% - 20px), calc(100% - 20px) 100%, 0 100%);
+     }
+     
+     .intro-card::after, .achievements-card::after {
+          right: 20px;
+          width: 1.5px;
+          height: 30px;
+     }
+     
+     .intro-right-border, .achievements-right-border {
+          width: 1.5px;
+          height: calc(100% - 10px);
+     }
+     
+     .intro-bottom-border, .achievements-bottom-border {
+          right: -150px;
+          width: calc(100% - 10px);
+          height: 1.5px;
+     }
+}
+
+/* Tablets (641px - 1023px) */
+@media (min-width: 641px) and (max-width: 1023px) {
+     .intro-card, .achievements-card {
+          padding: 1.25rem 1.75rem;
+          clip-path: polygon(0 0, 100% 0, 100% calc(100% - 25px), calc(100% - 25px) 100%, 0 100%);
+     }
+     
+     .intro-card::after, .achievements-card::after {
+          right: 25px;
+          width: 1.8px;
+          height: 38px;
+     }
+     
+     .intro-right-border, .achievements-right-border {
+          width: 1.8px;
+          height: calc(100% - 12px);
+     }
+     
+     .intro-bottom-border, .achievements-bottom-border {
+          right: -200px;
+          width: calc(100% - 12px);
+          height: 1.8px;
+     }
+}
+
+/* Desktop/Laptop (1024px and above) */
+@media (min-width: 1024px) {
+     body, html {
+          overflow: hidden !important;
+          height: 100vh !important;
+     }
+     
+     .single-page-layout {
+          height: 100vh !important;
+          overflow: hidden !important;
+     }
+     
+     .intro-card, .achievements-card {
+          padding: 1.5rem 2rem;
+          clip-path: polygon(0 0, 100% 0, 100% calc(100% - 30px), calc(100% - 30px) 100%, 0 100%);
+     }
+     
+     .intro-card::after, .achievements-card::after {
+          right: 30px;
+          width: 2px;
+          height: 43px;
+     }
+     
+     .intro-right-border, .achievements-right-border {
+          width: 2px;
+          height: calc(100% - 15px);
+     }
+     
+     .intro-bottom-border, .achievements-bottom-border {
+          right: -250px;
+          width: calc(100% - 15px);
+          height: 2px;
+     }
+}
+/* Mobile content overlap with Spline scene */
+@media (max-width: 1023px) {
+     .single-page-layout {
+          position: relative;
+     }
+     
+     /* Make Spline scene a background layer on mobile */
+     .single-page-layout > div:first-child {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          z-index: 1;
+     }
+     
+     /* Bring content forward */
+     .single-page-layout > div:last-child {
+          position: relative;
+          z-index: 10;
+          background: linear-gradient(to bottom, transparent 0%, transparent 40%, rgba(0,0,0,0.7) 60%, rgba(0,0,0,0.9) 80%);
+     }
+}
+/* Strict mobile layout constraint - CONTENT STAYS WITHIN BOUNDARIES */
+@media (max-width: 1023px) {
+     .single-page-layout > div:last-child {
+          height: calc(100vh-80px);
+          display: flex;
+          flex-direction: column;
+     }
+     /* Ensure content never crosses boundaries */
+     .single-page-layout > div:last-child > div:first-child {
+          flex: 1;
+          min-height: 0; /* Important for flex container */
+          display: flex;
+          flex-direction: column;
+     }
+     /* Fixed footer at bottom */
+     .single-page-layout + div {
+          position: fixed;
+          bottom: 0;
+          left: 0;
+          right: 0;
+          z-index: 30;
+          background: rgba(0, 0, 0, 0.9);
+          backdrop-filter: blur(10px);
+          border-top: 1px solid rgba(255, 255, 255, 0.1);
+     }
+     /* Content scrolling only within its container */
+     .single-page-layout .w-full.max-w-3xl {
+          max-height: 100%;
+          padding-right: 0px; /* Space for scrollbar */
+          margin-bottom: 2px; /* Fill gap above footer on mobile */
+     }
+}
+</style>

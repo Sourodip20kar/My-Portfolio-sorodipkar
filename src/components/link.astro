@@ -1,0 +1,156 @@
+---
+import clsx from "clsx/lite";
+
+type Props = {
+    href: string
+    className?: string
+    variant?: "primary" | "secondary"
+    target?: string
+    rel?: string
+}
+
+const { href, variant = "primary", className, target, rel } = Astro.props;
+---
+
+<a href={href} target={target} rel={rel} class={clsx(
+    "w-fit text-base sm:text-2xl px-5 py-2 transition-all duration-300 ease-in-out whitespace-nowrap audiowide-regular cyber-cut relative",
+    variant === "primary" && "text-zinc-900 bg-zinc-100 hover:shadow-[0_0_0_2px_theme(colors.zinc.100)] hover:shadow-zinc-100",
+    variant === "secondary" && "text-zinc-100 hover:text-white bg-transparent hover:bg-zinc-100/20 hover:shadow-[0_0_0_2px_theme(colors.zinc.100/0.2)]",
+    className
+)}>
+    <span class="link-backdrop"></span>
+    <span class="link-text"><slot /></span>
+    <div class="link-glitch" aria-hidden="true">
+        <span class="link-backdrop"></span>
+        <span class="link-text"><slot /></span>
+    </div>
+</a>
+
+<style>
+.audiowide-regular {
+  font-family: "Audiowide", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.cyber-cut {
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 12px),
+    calc(100% - 12px) 100%,
+    0 100%
+  );
+}
+
+.link-backdrop {
+  position: absolute;
+  z-index: -1;
+  inset: 0;
+  background: transparent;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - 12px),
+    calc(100% - 12px) 100%,
+    0 100%
+  );
+  pointer-events: none;
+}
+
+.link-text {
+  position: relative;
+  z-index: 1;
+}
+
+.link-glitch {
+  display: none;
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  color: #C0C0C0;
+  animation-duration: 2s;
+  --shimmy-distance: 3;
+  --clip-one: polygon(0 2%, 100% 2%, 100% 95%, 95% 95%, 95% 90%, 85% 90%, 85% 95%, 8% 95%, 0 70%);
+  --clip-two: polygon(0 78%, 100% 78%, 100% 100%, 95% 100%, 95% 90%, 85% 90%, 85% 100%, 8% 100%, 0 78%);
+  --clip-three: polygon(0 44%, 100% 44%, 100% 54%, 95% 54%, 95% 54%, 85% 54%, 85% 54%, 8% 54%, 0 54%);
+  --clip-four: polygon(0 0, 100% 0, 100% 0, 95% 0, 95% 0, 85% 0, 85% 0, 8% 0, 0 0);
+  --clip-five: polygon(0 0, 100% 0, 100% 0, 95% 0, 95% 0, 85% 0, 85% 0, 8% 0, 0 0);
+  --clip-six: polygon(0 40%, 100% 40%, 100% 85%, 95% 85%, 95% 85%, 85% 85%, 85% 85%, 8% 85%, 0 70%);
+  --clip-seven: polygon(0 63%, 100% 63%, 100% 80%, 95% 80%, 95% 80%, 85% 80%, 85% 80%, 8% 80%, 0 70%);
+}
+
+.link-glitch .link-backdrop {
+  background: transparent;
+}
+
+.link-glitch .link-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  padding: 0.5rem 1.25rem;
+}
+
+a:is(:focus-visible, :hover) .link-glitch {
+  animation: link-glitch 2s infinite;
+  display: block;
+}
+
+@keyframes link-glitch {
+  0% { clip-path: var(--clip-one); }
+  2%, 8% { 
+    clip-path: var(--clip-two); 
+    transform: translate(calc(var(--shimmy-distance) * -1px), 0); 
+  }
+  6% { 
+    clip-path: var(--clip-two); 
+    transform: translate(calc(var(--shimmy-distance) * 1px), 0); 
+  }
+  9% { 
+    clip-path: var(--clip-two); 
+    transform: translate(0, 0); 
+  }
+  10% { 
+    clip-path: var(--clip-three); 
+    transform: translate(calc(var(--shimmy-distance) * 1px), 0); 
+  }
+  13% { 
+    clip-path: var(--clip-three); 
+    transform: translate(0, 0); 
+  }
+  14%, 21% { 
+    clip-path: var(--clip-four); 
+    transform: translate(calc(var(--shimmy-distance) * 1px), 0); 
+  }
+  25% { 
+    clip-path: var(--clip-five); 
+    transform: translate(calc(var(--shimmy-distance) * 1px), 0); 
+  }
+  30% { 
+    clip-path: var(--clip-five); 
+    transform: translate(calc(var(--shimmy-distance) * -1px), 0); 
+  }
+  35%, 45% { 
+    clip-path: var(--clip-six); 
+    transform: translate(calc(var(--shimmy-distance) * -1px), 0); 
+  }
+  40% { 
+    clip-path: var(--clip-six); 
+    transform: translate(calc(var(--shimmy-distance) * 1px), 0); 
+  }
+  50% { 
+    clip-path: var(--clip-six); 
+    transform: translate(0, 0); 
+  }
+  55% { 
+    clip-path: var(--clip-seven); 
+    transform: translate(calc(var(--shimmy-distance) * 1px), 0); 
+  }
+  60% { 
+    clip-path: var(--clip-seven); 
+    transform: translate(0, 0); 
+  }
+  31%, 61%, 100% { clip-path: var(--clip-four); }
+}
+</style>

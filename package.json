@@ -1,0 +1,39 @@
+{
+  "name": "sourodip-kar",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev --host",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/react": "^4.2.5",
+    "@astrojs/vercel": "^8.1.4",
+    "@paper-design/shaders": "^0.0.45",
+    "@paper-design/shaders-react": "^0.0.45",
+    "@splinetool/react-spline": "^4.1.0",
+    "@splinetool/runtime": "^1.10.39",
+    "@tailwindcss/vite": "^4.1.4",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "astro": "^5.7.5",
+    "astro-loading-indicator": "^0.7.0",
+    "canvas-confetti": "^1.9.3",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.23.12",
+    "motion": "^12.9.2",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "react-terminal-ui": "^1.4.0",
+    "sharp": "^0.34.1",
+    "tailwindcss": "^4.1.4",
+    "vite": "^7.0.6"
+  },
+  "devDependencies": {
+    "@tailwindcss/typography": "^0.5.16",
+    "@types/canvas-confetti": "^1.9.0",
+    "@vitejs/plugin-react": "^4.7.0"
+  }
+}

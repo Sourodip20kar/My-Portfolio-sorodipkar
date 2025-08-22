@@ -1,0 +1,24 @@
+---
+import RootLayout from "./RootLayout.astro";
+import Footer from "../components/footer.astro";
+import DotGrid from "../components/dot-grid";
+
+const { title, description } = Astro.props;
+const pathname = Astro.url.pathname;
+---
+
+<RootLayout title={title} description={description}>
+	<div class="relative min-h-dvh w-full">
+		<div class="absolute inset-0 -z-10 dot-grid-container">
+			<DotGrid
+				className="w-full h-full"
+				client:load
+			/>
+		</div>
+
+		<main class="relative w-full max-w-screen-xl mx-auto">
+			<slot />
+			<Footer />
+		</main>
+	</div>
+</RootLayout>

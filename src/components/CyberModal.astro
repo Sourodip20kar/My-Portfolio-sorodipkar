@@ -1,0 +1,1418 @@
+---
+// src/components/CyberModal.astro
+---
+<button
+  class="cyber-btn"
+  popovertarget="book-a-call-modal"
+  popovertargetaction="show"
+  aria-label="Book a Call"
+  data-action="Book a Call"
+>
+  <span class="backdrop">
+    <span class="corner"></span>
+  </span>
+  <span>My Application</span>
+  <div class="glitch" aria-hidden="true">
+    <span class="backdrop">
+      <span class="corner"></span>
+    </span>
+    <span class="letters">
+      <span>M</span>
+      <span>y</span>
+      <span> </span>
+      <span>A</span>
+      <span>p</span>
+      <span>p</span>
+      <span>l</span>
+      <span>i</span>
+      <span>c</span>
+      <span>a</span>
+      <span>t</span>
+      <span>i</span>
+      <span>o</span>
+      <span>n</span>
+    </span>
+  </div>
+</button>
+
+<div class="modal" popover="auto" id="book-a-call-modal">
+  <section class="modal__body">
+    <div class="body__backdrop">
+      <div class="backdrop">
+        <div class="version">0x534F55524F44950.SK.25</div>
+        <div class="corner"></div>
+      </div>
+    </div>
+    <div class="body__content">
+      <div class="profile-section">
+        <img src="/download2.png" alt="Sourodip Kar" class="profile-image" />
+        <div class="profile-details">
+          <h2 class="name">Sourodip Kar</h2>
+          <p class="subtitle">Internship Application</p>
+        </div>
+        <div class="live-indicator">
+          <span class="blinking-dot"></span>
+          <span>LIVE</span>
+        </div>
+      </div>
+
+      <div class="info-grid">
+        <div class="grid-item">
+          <p class="label">Duration</p>
+          <p class="value">6 months - starting September 2025</p>
+        </div>
+        <div class="grid-item">
+          <p class="label">Location</p>
+          <p class="value">India | Remote</p>
+        </div>
+        <div class="grid-item">
+          <p class="label">Tech Stack</p>
+          <p class="value">Python, Java, JavaScript, SQL, Spring Boot, React, TypeScript, PyTorch, TensorFlow, OpenCV, AWS, GCP, Docker, Git, REST APIs, Jupyter Notebooks, MongoDB, Roboflow</p>
+        </div>
+        <div class="grid-item">
+          <p class="label">Availability</p>
+          <p class="value">Immediate</p>
+        </div>
+      </div>
+      <div class="body__text">
+        <h3 class="what-i-bring-title">Experience</h3>
+        <p class="intro-paragraph">
+          Intern at ISRO SAC, developed custom datasets and fine-tuned YOLOv11 for high-accuracy solar panel detection and segmentation using SAM, improved model accuracy and performance, and built pipelines for scalable workflows.
+        </p>
+      </div>
+      <div class="body__text">
+        <h3 class="what-i-bring-title">Goal</h3>
+        <p class="intro-paragraph">
+          Join a bold innovative team applying AI/ML and full-stack expertise to real problems. I learn fast, adapt quickly, and design scalable, reliable systems. I’m focused, collaborative, and driven to deliver impact.
+        </p>
+      </div>
+      
+      <!-- Additional scrollable content -->
+      <div class="additional-content">
+        <!-- <div class="scroll-indicator">
+          <span class="scroll-text">Scroll for more details ↓</span>
+        </div> -->
+        
+        <div class="extended-details">
+          <p class="scroll-intro">Here's the scoop on my internship search 👇</p>
+          
+          <div class="detail-item">
+            <p><span class="emoji"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar-days"><path d="M8 2v4"></path><path d="M16 2v4"></path><rect width="18" height="18" x="3" y="4" rx="2"></rect><path d="M3 10h18"></path><path d="M8 14h.01"></path><path d="M12 14h.01"></path><path d="M16 14h.01"></path><path d="M8 18h.01"></path><path d="M12 18h.01"></path><path d="M16 18h.01"></path></svg></span> <strong>Duration:</strong> <span class="detail-text">Open for a 6-month internship from September 2025, also flexible for shorter terms or a full-time role.</span></p>
+          </div>
+          
+          <div class="detail-item">
+            <p><span class="emoji"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe"><circle cx="12" cy="12" r="10"></circle><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path><path d="M2 12h20"></path></svg></span> <strong>Location:</strong> <span class="detail-text">Preferably India, open to remote opportunities.</span></p>
+          </div>
+          
+          <div class="detail-item">
+            <p><span class="emoji"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 107.47 122.88" fill="none" stroke="white" stroke-width="2"><path d="M53.67,108.33a5.6,5.6,0,1,1-5.59,5.6,5.6,5.6,0,0,1,5.59-5.6ZM39.3,76.42c7.28,8.18,23.77,6.74,29.86,0a56.89,56.89,0,0,1-4.22-5.7l-.84-1.22a17.5,17.5,0,0,1-10.13,3,17,17,0,0,1-11.08-4c-.83,2.48-2,5.89-3.22,7.52a1.8,1.8,0,0,1-.37.36ZM10,90.92a4,4,0,0,0-3.73,4.66l3.53,27.3h-9c0-14.58-5.17-32.46,10.09-41,5.68-3.17,20.32-4.24,26.7-8.43a54.08,54.08,0,0,0,2.71-7.08c.07-.22-.05.14.06-.19a56,56,0,0,1-6.1-8.43L29,49.42c-1.93-2.87-2.93-5.5-3-7.65A6,6,0,0,1,26.57,39a5.07,5.07,0,0,1,1.81-2.1,6.58,6.58,0,0,1,1.27-.65,133.75,133.75,0,0,1-.25-15,20.68,20.68,0,0,1,.65-3.41C32,11,37.89,6,44.65,3.66,47.93,2.53,46.66-.17,50,0c7.86.43,20,5.49,24.63,10.86,6.52,7.52,4.84,16.78,4.62,26h0A3.83,3.83,0,0,1,82,39.69c.42,1.66,0,4-1.45,7.19h0s0,.11-.09.17l-6,9.87c-2.31,3.81-4.66,7.62-7.79,10.56l-.16.14,1,1.4c1,1.53,2.22,3.27,3.32,4.63,6.52,4,20.85,5.14,26.46,8.26,14,7.82,9.23,27.13,10,41H98.38l3.53-27.3a4,4,0,0,0-3.73-4.66ZM32.68,38.71A5.25,5.25,0,0,0,30,39.4a2.2,2.2,0,0,0-.76.88A3.23,3.23,0,0,0,29,41.69c.05,1.6.89,3.69,2.51,6.1l0,0h0l5.26,8.37c2.11,3.35,4.33,6.77,7.07,9.28A14.45,14.45,0,0,0,54,69.55a14.88,14.88,0,0,0,10.68-4.24c2.84-2.66,5.07-6.29,7.28-9.93l5.92-9.76c1.11-2.52,1.51-4.21,1.26-5.19-.15-.59-.8-.88-1.91-.94q-.36,0-.72,0a8,8,0,0,0-.83,0,1.75,1.75,0,0,1-.46,0,8.09,8.09,0,0,1-1.62-.09l2-9c-15.06,2.37-26.33-8.82-42.25-2.24L34.5,38.79a9,9,0,0,1-1.82-.08Z" fill="white"/></svg></span> <strong>Focus:</strong> <span class="detail-text">AI development, full-stack web apps, SaaS, and agentic workflows.</span></p>
+          </div>
+          
+          <div class="detail-item">
+            <p><span class="emoji"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 122.88 101.57" fill="white" stroke="white" stroke-width="1"><path d="M44.97,12.84h-17.2L0,49.37L27.77,85.9h17.2L17.2,49.37L44.97,12.84L44.97,12.84z M77.91,12.84h17.2l27.77,36.53 L95.11,85.9h-17.2l27.77-36.53L77.91,12.84L77.91,12.84z M70.17,0.04l5.96,1.39c0.94,0.22,1.52,1.16,1.31,2.1l-22.5,96.69 c-0.22,0.93-1.16,1.52-2.1,1.31l-5.95-1.39c-0.94-0.22-1.52-1.16-1.31-2.1l22.5-96.69C68.3,0.42,69.24-0.17,70.17,0.04L70.17,0.04 L70.17,0.04z"/></svg></span> <strong>Stack:</strong> <span class="detail-text">Python, Java, Spring Boot, React, TypeScript, PyTorch, TensorFlow —— quick to pick up new tools.</span></p>
+          </div>
+          
+          <div class="detail-item">
+            <p><span class="emoji"><svg width="17" height="17" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="white" stroke="white" stroke-width="2"><path d="M14.302,41.5h19.385c1.551,0,2.813-1.262,2.813-2.813V34.37c0-4.822-3.654-8.77-8.38-9.197v-3.964  c2.291-1.412,3.71-3.917,3.71-6.628V11.5h0.67c0.276,0,0.5-0.224,0.5-0.5V7.585h2.5v2.625c0,0.276,0.224,0.5,0.5,0.5  s0.5-0.224,0.5-0.5V7.085c0-0.276-0.224-0.5-0.5-0.5h-3.5h-17H12c-0.276,0-0.5,0.224-0.5,0.5s0.224,0.5,0.5,0.5h3V11  c0,0.276,0.224,0.5,0.5,0.5h0.67v3.08c0,2.711,1.418,5.217,3.7,6.629v3.965c-4.735,0.436-8.38,4.381-8.38,9.197v4.317  C11.49,40.238,12.751,41.5,14.302,41.5z M25.732,25.12h-3.464H20.87v-3.377c0.98,0.432,2.045,0.667,3.13,0.667  c1.081,0,2.143-0.235,3.12-0.667v3.377H25.732z M25.098,26.12L24,30.692l-1.098-4.572H25.098z M16,7.585h16V10.5h-0.67H16.67H16  V7.585z M17.17,14.58V11.5h13.66v3.08c0,2.454-1.324,4.724-3.46,5.927c-2.045,1.185-4.712,1.181-6.753-0.002  C18.491,19.302,17.17,17.032,17.17,14.58z M12.49,34.37c0-4.44,3.47-8.06,7.921-8.242c0.107-0.009,0.221-0.009,0.329-0.008h1.134  l1.64,6.83c0.054,0.225,0.255,0.383,0.486,0.383s0.432-0.159,0.486-0.383l1.64-6.83h1.124c0.111,0.002,0.223,0,0.35,0.009  c4.43,0.181,7.9,3.8,7.9,8.241v4.317c0,1-0.813,1.813-1.813,1.813H14.302c-1,0-1.813-0.813-1.813-1.813V34.37z M16.083,33.81h4.287c0.276,0,0.5-0.224,0.5-0.5s-0.224-0.5-0.5-0.5h-4.287c-0.276,0-0.5,0.224-0.5,0.5  S15.807,33.81,16.083,33.81z"/></svg></span> <strong>Education:</strong> <span class="detail-text">B.Tech in Computer Science & Engineering (AI & ML), 2025 Batch.</span></p>
+          </div>
+          
+          <div class="detail-item">
+            <p><span class="emoji"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 122.88 116.22" fill="white" stroke="white" stroke-width="3"><path d="M41.68,75.91c6.32,13.18,25.49,13.65,31.54,0.08c-1.65-1.67-2.88-3.46-4.09-5.24c-0.2-0.29-0.4-0.58-0.6-0.88 c-2.92,2.32-6.47,3.8-11.09,3.79c-4.98-0.01-8.74-1.92-11.81-4.73c-0.18-0.17-0.37-0.34-0.55-0.51c-0.44,1.22-1,2.69-1.6,4.06 C42.9,73.78,42.28,75.02,41.68,75.91L41.68,75.91L41.68,75.91z M84.73,93.6l4.54-4.76l6.55,6.3l10.2-13.59l5.07,4.09 c-2.39,2.96-10.91,14.65-12.77,16.17c-1.53,1.25-3.73,1.25-5.15-0.12L84.73,93.6L84.73,93.6z M97.97,66.4 c6.88,0,13.1,2.79,17.61,7.3c4.51,4.51,7.29,10.73,7.29,17.61c0,6.88-2.79,13.1-7.29,17.61c-4.51,4.51-10.73,7.3-17.61,7.3 c-6.88,0-13.1-2.79-17.61-7.3c-4.51-4.51-7.3-10.73-7.3-17.61c0-4.98,1.46-9.62,3.98-13.51c-0.72-0.31-1.43-0.67-2.2-1.1 c-3.06,14.18-27.23,17.6-34.69,0.81c-5.27,2.65-10.62,4.66-16.74,5.61l3.56,25.69H5.76c-10.52-0.8-4.03-16-0.86-20.19 c1.52-2.01,3.41-3.49,5.5-4.66c6.28-3.5,22.63-4.66,29.41-9.39c0.5-0.75,1.04-1.84,1.55-3.02c0.78-1.78,1.49-3.72,1.94-5.04 c-1.9-2.23-3.52-4.75-5.08-7.24l-5.14-8.17c-1.88-2.8-2.86-5.37-2.92-7.47c-0.03-0.99,0.14-1.89,0.5-2.68 c0.38-0.83,0.97-1.52,1.77-2.05c0.37-0.25,0.79-0.46,1.25-0.64c-0.33-4.43-0.46-10.02-0.24-14.7c0.11-1.11,0.32-2.22,0.63-3.33 c1.31-4.69,4.61-8.47,8.68-11.07c2.25-1.43,4.71-2.51,7.28-3.24c1.63-0.46-1.39-5.68,0.3-5.85C58.49-0.77,71.7,6.68,77.4,12.84 c2.85,3.09,4.64,7.18,5.03,12.6l-0.32,13.34v0c1.43,0.43,2.34,1.34,2.71,2.8c0.41,1.62-0.04,3.91-1.41,7.02l0,0 c-0.02,0.06-0.05,0.11-0.09,0.17l-5.86,9.65c-2.15,3.54-4.34,7.1-7.19,9.9c0.26,0.37,0.51,0.74,0.77,1.12 c1.16,1.7,2.33,3.4,3.83,4.92c0.05,0.05,0.09,0.1,0.13,0.16c0.89,0.63,1.96,1.2,3.15,1.72c0.68-0.89,1.42-1.74,2.21-2.53 C84.87,69.19,91.1,66.4,97.97,66.4L97.97,66.4L97.97,66.4z M36.64,40.62c-1.14,0.04-2,0.28-2.59,0.68 c-0.34,0.23-0.58,0.51-0.74,0.86c-0.18,0.38-0.26,0.84-0.24,1.38c0.04,1.56,0.86,3.61,2.45,5.96l0.02,0.03l5.14,8.17 c2.06,3.28,4.22,6.62,6.91,9.07c2.58,2.36,5.72,3.96,9.86,3.97c4.49,0.01,7.77-1.65,10.43-4.14c2.77-2.59,4.95-6.15,7.11-9.69 l5.79-9.54c1.08-2.46,1.47-4.11,1.23-5.08c-0.15-0.58-0.78-0.86-1.86-0.91c-0.23-0.01-0.47-0.01-0.7-0.01 c-0.26,0.01-0.53,0.03-0.81,0.05c-0.15,0.01-0.3,0-0.45-0.03c-0.52,0.03-1.05-0.01-1.59-0.09l1.98-8.78 c-14.71,2.32-25.72-8.61-41.27-2.19l1.12,10.34C37.79,40.73,37.19,40.71,36.64,40.62L36.64,40.62L36.64,40.62L36.64,40.62z M97.97,70.26c-5.81,0-11.08,2.36-14.89,6.17c-3.81,3.81-6.17,9.07-6.17,14.89c0,11.63,9.43,21.05,21.06,21.05 c5.81,0,11.08-2.36,14.89-6.17c3.81-3.81,6.17-9.07,6.17-14.89C119.03,79.68,109.6,70.26,97.97,70.26L97.97,70.26z"/></svg></span> <strong>Leadership:</strong> <span class="detail-text">IEEE publications, hackathon wins like ISRO Bharatiya Antariksh Hackathon & Smart Bengal Hackathon.</span></p>
+          </div>
+
+          <div class="detail-item highlight">
+            <p class="detail-text" style="font-family: 'Space Mono', monospace;">I’m all about moving fast, learning faster, and ready to take on big challenges! If you know anyone looking for a passionate dev, hit me up! 📬</p>
+          </div>
+          
+          <div class="detail-item closing">
+            <p class="detail-text" style="font-family: 'Space Mono', monospace;">Got any leads for me? 😄</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="modal__actions">
+    <a href="/contact" class="contact-btn cyber-btn">
+      <span class="backdrop">
+        <span class="corner"></span>
+      </span>
+      <span>Contact Me</span>
+    </a>
+    <a href="https://github.com/Sourodip20kar" target="_blank" rel="noopener noreferrer" class="action-link cyber-btn">
+      <span class="backdrop">
+        <span class="corner"></span>
+      </span>
+      <span>GitHub</span>
+    </a>
+    <a href="https://www.linkedin.com/in/sourodip20kar/" target="_blank" rel="noopener noreferrer" class="action-link cyber-btn">
+      <span class="backdrop">
+        <span class="corner"></span>
+      </span>
+      <span>LinkedIn</span>
+    </a>
+  </div>
+</div>
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+  
+  @font-face {
+    font-family: Cyber;
+    src: url('https://assets.codepen.io/605876/Blender-Pro-Bold.otf');
+    font-display: swap;
+  }
+
+  @layer base, backdrop, transition, delays, glitch;
+
+  @layer base {
+    :root {
+      --shadow: hsl(0, 100%, 50%);
+      --accent: hsl(175, 0%, 100%);
+      --border: 3px;
+      --corner: 12px;
+      --z-index-modal: 9999;
+      --z-index-backdrop: 9998;
+      --z-index-content: 10001;
+      --clip: polygon(
+        0 0,
+        100% 0,
+        100% calc(100% - var(--corner)),
+        calc(100% - var(--corner)) 100%,
+        0% 100%
+      );
+      --flicker: linear(
+        0 0%,
+        0.1864 6.17%,
+        0.0001 14.41%,
+        0.5244 20.97%,
+        0.3927 37.91%,
+        0.8115 60.62%,
+        0.9416 61.92%,
+        0.9928 67.98%,
+        0.5032 70.42%,
+        0.9077 96.96%,
+        0.6736 98.74%,
+        1 100%
+      );
+    }
+    
+    .cyber-btn {
+      font-family: "Audiowide", sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1rem;
+      border: 0;
+      background: transparent;
+      position: relative;
+      color: var(--accent);
+      cursor: pointer;
+      width: 200px;
+      text-align: left;
+      font-size: 1.2rem;
+    }
+
+    .cyber-btn * {
+      pointer-events: none;
+    }
+
+    .cyber-btn kbd {
+      color: canvas;
+      font-weight: bold;
+      width: 20px;
+      display: inline-block;
+      aspect-ratio: 1;
+      font-size: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-grid;
+      place-items: center;
+    }
+
+    .cyber-btn:is(:hover, :focus-visible) {
+      color: canvas;
+    }
+
+    .cyber-btn:is(:hover, :focus-visible) kbd {
+      color: var(--accent);
+    }
+
+    .cyber-btn:is(:hover, :focus-visible) .backdrop {
+      background: var(--accent);
+    }
+
+    .modal {
+      color: var(--accent);
+      width: clamp(340px, 100vw, 650px);
+      height: clamp(500px, 80vh, 650px);
+      border: 0;
+      padding: 0;
+      overflow: visible;
+      background: #0000;
+      font-family: "Audiowide", sans-serif;
+      margin: auto;
+      z-index: 9999;
+      position: relative;
+    }
+
+    .modal::backdrop {
+      background: hsl(0 0% 0% / 0.75);
+      backdrop-filter: blur(10px);
+      z-index: 9998;
+    }
+
+    .modal .version {
+      position: absolute;
+      right: 4px;
+      top: 4px;
+      font-size: 8px;
+      opacity: 0.5;
+    }
+
+    .modal ::selection {
+      background: var(--accent);
+      color: canvasText;
+    }
+
+    .modal h2 {
+      padding-bottom: 0.5rem;
+      margin: 0;
+      text-transform: uppercase;
+      position: relative;
+      font-size: 1.25rem;
+    }
+
+    .modal h2::after {
+      content: '';
+      height: var(--border);
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: var(--accent);
+      position: absolute;
+    }
+
+    .modal p {
+      color: color-mix(in oklch, var(--accent), canvasText 50%);
+      line-height: 1.5;
+      margin: 0.5em 0;
+    }
+    
+    .modal a {
+      text-decoration: underline;
+      color: var(--accent);
+    }
+
+    .modal a:hover {
+      text-decoration: none;
+    }
+
+    .modal .modal__body {
+      backdrop-filter: saturate(180%) blur(6px);
+      clip-path: inset(0 -100% 0 0);
+      z-index: 10000;
+      position: relative;
+    }
+
+    .modal .body__content {
+      padding: 1rem;
+      position: relative;
+      max-height: 600px;
+      overflow-y: auto;
+      overflow-x: hidden;
+      z-index: 10001;
+    }
+
+    .modal .modal__actions {
+      position: absolute;
+      top: 100%;
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 0.5rem;
+      padding-block: 0.5rem;
+    }
+    @media (min-width: 769px) {
+      .modal .modal__actions {
+        padding-block: 0.5rem !important;
+      }
+    }
+    /* Profile Section Styles */
+    .live-indicator {
+      position: absolute;
+      top: 3.25rem;
+      right: 1.5rem;
+      color: hsl(120, 100%, 70%);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: "Audiowide", sans-serif;
+      font-size: 0.75rem;
+      text-shadow: 0 0 5px hsl(120, 100%, 50%);
+      opacity: 0.9;
+      z-index: 10;
+    }
+
+    .blinking-dot {
+      width: 8px;
+      height: 8px;
+      background-color: hsl(120, 100%, 50%);
+      border-radius: 50%;
+      animation: blink 1.2s infinite ease-in-out;
+      box-shadow: 0 0 8px hsl(120, 100%, 50%);
+    }
+
+    @keyframes blink {
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.4;
+        transform: scale(0.8);
+      }
+    }
+
+    .profile-section {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      margin-bottom: 0.1rem;
+    }
+
+    .profile-image {
+      width: 75px;
+      height: 75px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .profile-image::after {
+      content: '';
+      position: absolute;
+      inset: -2px;
+      border-radius: 50%;
+      border: 2px solid var(--accent);
+      clip-path: polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
+      pointer-events: none;
+      z-index: 99;
+    }
+
+    .profile-details {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .profile-details .name {
+      font-size: clamp(1.5rem, 4vw, 1.75rem);
+      font-weight: 600;
+      margin: 0;
+      color: var(--accent);
+      line-height: 1.2;
+      font-family: "Audiowide", sans-serif;
+    }
+
+    .profile-details .subtitle {
+      font-size: clamp(0.9rem, 2vw, 1rem);
+      font-weight: 400;
+      color: #888888;
+      margin: 0.25rem 0 0;
+      opacity: 0.9;
+      font-family: "Audiowide", sans-serif;
+    }
+
+    /* Content Styles */
+    .what-i-bring-title {
+      font-family: "Audiowide", sans-serif;
+      font-size: clamp(1rem, 2vw,1rem);
+      font-weight: 600;
+      color: var(--accent);
+      margin: 0 0 1rem 0;
+      letter-spacing: 0.5px;
+      line-height: 1;
+    }
+
+    .body__text .intro-paragraph {
+      margin-bottom: 1rem;
+      line-height: 1.4;
+      font-size: 0.7rem;
+      font-family: 'Space Mono', monospace;
+      color: color-mix(in oklch, var(--accent), canvasText 50%);
+      transition: color 0.3s ease;
+      cursor: pointer;
+    }
+
+    .body__text .intro-paragraph:hover {
+      color: rgb(255, 255, 255); /* white - full color */
+    }
+
+    /* Additional Content Styles */
+    .additional-content {
+      margin-top: 1rem;
+      /* padding-top: 1rem; */
+      /* border-top: 1px solid hsla(175, 100%, 50%, 0.2); */
+    }
+
+    .scroll-indicator {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .scroll-text {
+      font-family: "Audiowide", sans-serif;
+      font-size: 0.6rem;
+      color: hsla(175, 100%, 50%, 0.7);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 0.7; }
+      50% { opacity: 1; }
+    }
+
+    .extended-details {
+      padding-top: 0.5rem;
+    }
+
+    .scroll-intro {
+      font-family: "Audiowide", sans-serif;
+      font-size: 0.75rem;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+      text-align: center;
+      font-weight: 600;
+      line-height: 1.3;
+    }
+
+    .detail-item {
+      margin: 1rem 0;
+    }
+
+    .detail-item p {
+      font-family: "Audiowide", sans-serif;
+      font-size: 0.7rem;
+      color: color-mix(in oklch, var(--accent), canvasText 50%);
+      line-height: 1.4;
+      margin: 0;
+    }
+
+    .detail-item .emoji {
+      margin-right: 0.5rem;
+      display: inline-flex;
+      align-items: baseline;
+    }
+
+    .detail-item .emoji svg {
+      vertical-align: baseline;
+      display: inline-block;
+      transform: translateY(2px);
+    }
+
+    .detail-item strong {
+      color: var(--accent);
+    }
+
+    .detail-text {
+      font-family: 'Space Mono', monospace;
+      z-index: 1;
+      color: rgb(161, 161, 170); /* zinc-400 */
+      transition: color 0.3s ease;
+      cursor: pointer;
+    }
+
+    .detail-text:hover {
+      color: rgb(255, 255, 255); /* white - full color */
+    }
+
+    .detail-item.highlight {
+      background: hsla(175, 100%, 50%, 0.05);
+      border: 1px solid hsla(175, 100%, 50%, 0.2);
+      border-radius: 4px;
+      padding: 0.75rem;
+      margin: 1.5rem 0;
+    }
+
+    .detail-item.highlight p {
+      color: var(--accent);
+      font-weight: 500;
+    }
+
+    .contact-section {
+      background: hsla(175, 100%, 50%, 0.05);
+      border: 1px solid hsla(175, 100%, 50%, 0.2);
+      border-radius: 4px;
+      padding: 1rem;
+      margin: 1.5rem 0;
+    }
+
+    .contact-section h4 {
+      font-family: "Audiowide", sans-serif;
+      font-size: 0.7rem;
+      color: var(--accent);
+      margin: 0 0 0.75rem 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .contact-item {
+      margin: 0.5rem 0;
+    }
+
+    .contact-item p {
+      font-size: 0.6rem !important;
+      margin: 0 !important;
+    }
+
+    .detail-item.closing {
+      text-align: center;
+      margin: 1.5rem 0 1rem 0;
+    }
+
+    .detail-item.closing p {
+      font-weight: 600 !important;
+      color: var(--accent) !important;
+      font-size: 0.7rem !important;
+    }
+
+    /* Hide scrollbar for modal content */
+    .body__content::-webkit-scrollbar {
+      display: none;
+    }
+
+    .body__content {
+      -ms-overflow-style: none;  /* Internet Explorer 10+ */
+      scrollbar-width: none;  /* Firefox */
+    }
+
+    .attributes-title {
+      font-family: "Audiowide", sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.5px;
+      color: hsl(120, 100%, 75%);
+      opacity: 0.7;
+      margin-bottom: 0.75rem;
+      font-weight: 400;
+      text-transform: uppercase;
+    }
+
+    .attributes-list p {
+      font-family: "Audiowide", sans-serif;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin: 0.5rem 0;
+      color: var(--accent);
+      font-size: 0.85rem;
+      letter-spacing: 0.5px;
+    }
+
+    .attributes-list .prompt {
+      color: hsl(120, 100%, 75%);
+      opacity: 0.8;
+      font-weight: bold;
+    }
+
+    .action-link {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .contact-btn {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Info Grid Styles */
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      border: 1px solid hsla(175, 100%, 50%, 0.2);
+      margin: 1.75rem 0;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .grid-item {
+      padding: 1rem 1.25rem;
+      background: hsla(175, 100%, 50%, 0.02);
+    }
+    
+    /* Add the inner borders */
+    .grid-item:nth-child(1), 
+    .grid-item:nth-child(2) {
+      border-bottom: 1px solid hsla(175, 100%, 50%, 0.2);
+    }
+
+    .grid-item:nth-child(1), 
+    .grid-item:nth-child(3) {
+      border-right: 1px solid hsla(175, 100%, 50%, 0.2);
+    }
+
+    .grid-item .label {
+      font-size: 0.7rem;
+      color: #888888;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin: 0 0 0.4rem 0;
+      opacity: 0.8;
+      font-family: "Audiowide", sans-serif;
+    }
+
+    .grid-item .value {
+      font-size: 0.75rem;
+      color: var(--accent);
+      margin: 0;
+      line-height: 1.5;
+      font-weight: 500;
+      font-family:'Space Mono', monospace;
+    }
+
+    /* Mobile and Small Screen Responsive Styles */
+    @media (max-width: 768px) {
+      .cyber-btn {
+        width: 100%;
+        max-width: 280px;
+        font-size: 1rem;
+        padding: 0.8rem 1rem;
+      }
+
+      .modal {
+        width: 95vw;
+        height: 90vh;
+        margin: 5vh auto;
+      }
+
+      .modal .body__content {
+        padding: 0.75rem;
+        max-height: calc(90vh - 140px);
+        overflow-y: auto;
+      }
+
+      .modal .modal__actions {
+        flex-direction: column;
+        gap: 0.5rem;
+        padding: 0.75rem 0.5rem 0.75rem 0.5rem;
+        position: relative;
+        top: 0;
+        background: transparent;
+        width: 100%;
+        box-sizing: border-box;
+        max-height: 25vh;
+        overflow: hidden;
+        margin-top: 0;
+      }
+
+      .modal .modal__actions .cyber-btn {
+        width: 100%;
+        max-width: none;
+        justify-content: center;
+        font-size: 0.8rem;
+        padding: 0.5rem 0.75rem;
+        min-height: 40px;
+        flex-shrink: 0;
+      }
+
+      .profile-section {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+        margin-bottom: 1.5rem;
+        position: relative;
+      }
+
+      .profile-image {
+        width: 80px;
+        height: 80px;
+      }
+
+      .live-indicator {
+        position: static;
+        justify-content: center;
+        margin-top: 0.5rem;
+        font-size: 0.65rem;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+        margin: 1rem 0;
+      }
+
+      .grid-item {
+        padding: 0.8rem 1rem;
+      }
+
+      .grid-item:nth-child(1), 
+      .grid-item:nth-child(3) {
+        border-right: none;
+      }
+
+      .grid-item:nth-child(1), 
+      .grid-item:nth-child(2),
+      .grid-item:nth-child(3) {
+        border-bottom: 1px solid hsla(175, 100%, 50%, 0.2);
+      }
+
+      .grid-item:last-child {
+        border-bottom: none;
+      }
+
+      .grid-item .label {
+        font-size: 0.65rem;
+      }
+
+      .grid-item .value {
+        font-size: 0.7rem;
+        line-height: 1.4;
+      }
+
+      .what-i-bring-title {
+        font-size: 0.9rem;
+      }
+
+      .body__text .intro-paragraph {
+        font-size: 0.65rem;
+        line-height: 1.3;
+        font-family: 'Space Mono', monospace;
+      }
+
+      .detail-item p {
+        font-size: 0.65rem;
+        line-height: 1.3;
+      }
+
+      .detail-item.highlight {
+        padding: 0.6rem;
+        margin: 1rem 0;
+      }
+
+      .scroll-intro {
+        font-size: 0.7rem;
+        margin-bottom: 1rem;
+      }
+
+      .modal .version {
+        font-size: 7px;
+        right: 3px;
+        top: 3px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .cyber-btn {
+        font-size: 0.9rem;
+        padding: 0.7rem 0.8rem;
+      }
+      
+      .modal {
+        width: 98vw;
+        height: 95vh;
+        margin: 2.5vh auto;
+      }
+
+      .modal .body__content {
+        padding: 0.5rem;
+        max-height: calc(95vh - 120px);
+        overflow-y: auto;
+      }
+
+      .profile-section {
+        gap: 0.8rem;
+        margin-bottom: 1rem;
+      }
+
+      .profile-image {
+        width: 70px;
+        height: 70px;
+      }
+
+      .live-indicator {
+        font-size: 0.6rem;
+        gap: 0.3rem;
+        margin-top: 0.4rem;
+      }
+
+      .blinking-dot {
+        width: 6px;
+        height: 6px;
+      }
+
+      .profile-details .name {
+        font-size: 1.3rem;
+      }
+
+      .profile-details .subtitle {
+        font-size: 0.8rem;
+      }
+
+      .grid-item {
+        padding: 0.6rem 0.9rem;
+      }
+
+      .grid-item .label {
+        font-size: 0.6rem;
+        margin-bottom: 0.3rem;
+      }
+
+      .grid-item .value {
+        font-size: 0.75rem;
+      }
+
+      .what-i-bring-title {
+        font-size: 0.8rem;
+        margin-bottom: 0.8rem;
+      }
+
+      .body__text .intro-paragraph {
+        font-size: 0.73rem;
+        margin-bottom: 0.65rem;
+        font-family: 'Space Mono', monospace;
+      }
+
+      .detail-item p {
+        font-size: 0.6rem;
+      }
+
+      .detail-item.highlight {
+        padding: 0.5rem;
+      }
+
+      .scroll-intro {
+        font-size: 0.65rem;
+      }
+
+      .modal .modal__actions {
+        padding: 0.6rem 0.4rem 0.6rem 0.4rem;
+        gap: 0.4rem;
+        width: 100%;
+        box-sizing: border-box;
+        max-height: 20vh;
+        overflow: hidden;
+        background: transparent;
+        margin-top: 0;
+        position: relative;
+        top: 0;
+      }
+
+      .modal .modal__actions .cyber-btn {
+        font-size: 0.75rem;
+        padding: 0.5rem 0.6rem;
+        min-height: 36px;
+        width: 100%;
+        flex-shrink: 0;
+      }
+    }
+  }
+
+  @layer glitch {
+    .letters {
+      display: flex;
+    }
+
+    .letters span:nth-of-type(2),
+    .letters span:nth-of-type(5) {
+      scale: 1 -1;
+    }
+
+    .letters span:nth-of-type(3),
+    .letters span:nth-of-type(6),
+    .letters span:nth-of-type(7) {
+      scale: -1 -1;
+    }
+
+    .cyber-btn, .modal__glitch {
+      --shimmy-distance: 5;
+      --clip-one: polygon(0 2%, 100% 2%, 100% 95%, 95% 95%, 95% 90%, 85% 90%, 85% 95%, 8% 95%, 0 70%);
+      --clip-two: polygon(0 78%, 100% 78%, 100% 100%, 95% 100%, 95% 90%, 85% 90%, 85% 100%, 8% 100%, 0 78%);
+      --clip-three: polygon(0 44%, 100% 44%, 100% 54%, 95% 54%, 95% 54%, 85% 54%, 85% 54%, 8% 54%, 0 54%);
+      --clip-four: polygon(0 0, 100% 0, 100% 0, 95% 0, 95% 0, 85% 0, 85% 0, 8% 0, 0 0);
+      --clip-five: polygon(0 0, 100% 0, 100% 0, 95% 0, 95% 0, 85% 0, 85% 0, 8% 0, 0 0);
+      --clip-six: polygon(0 40%, 100% 40%, 100% 85%, 95% 85%, 95% 85%, 85% 85%, 85% 85%, 8% 85%, 0 70%);
+      --clip-seven: polygon(0 63%, 100% 63%, 100% 80%, 95% 80%, 95% 80%, 85% 80%, 85% 80%, 8% 80%, 0 70%);
+    }
+
+    .cyber-btn:is(:focus-visible, :hover) .glitch {
+      animation: glitch 2s infinite;
+      display: flex;
+    }
+
+    .cyber-btn .glitch {
+      display: none;
+      position: absolute;
+      inset: 0;
+      translate: 0% 0;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1rem;
+      pointer-events: none;
+      color: var(--accent);
+      text-shadow: 0 1px var(--shadow);
+    }
+    
+    .cyber-btn .glitch .backdrop {
+      background: canvas;
+    }
+    
+    .cyber-btn .glitch kbd {
+      opacity: 0;
+    }
+    
+    .modal__glitch {
+      --shimmy-distance: 2;
+      position: absolute;
+      inset: 0;
+      padding: 1rem;
+      animation-duration: 3s;
+      color: #00ff41 !important;
+      z-index: -1;
+    }
+    
+    .modal__glitch * {
+      color: #00ff41 !important;
+    }
+
+    @keyframes glitch {
+      0% { clip-path: var(--clip-one); }
+      2%, 8% { 
+        clip-path: var(--clip-two); 
+        transform: translate(calc(var(--shimmy-distance) * -1%), 0); 
+      }
+      6% { 
+        clip-path: var(--clip-two); 
+        transform: translate(calc(var(--shimmy-distance) * 1%), 0); 
+      }
+      9% { 
+        clip-path: var(--clip-two); 
+        transform: translate(0, 0); 
+      }
+      10% { 
+        clip-path: var(--clip-three); 
+        transform: translate(calc(var(--shimmy-distance) * 1%), 0); 
+      }
+      13% { 
+        clip-path: var(--clip-three); 
+        transform: translate(0, 0); 
+      }
+      14%, 21% { 
+        clip-path: var(--clip-four); 
+        transform: translate(calc(var(--shimmy-distance) * 1%), 0); 
+      }
+      25% { 
+        clip-path: var(--clip-five); 
+        transform: translate(calc(var(--shimmy-distance) * 1%), 0); 
+      }
+      30% { 
+        clip-path: var(--clip-five); 
+        transform: translate(calc(var(--shimmy-distance) * -1%), 0); 
+      }
+      35%, 45% { 
+        clip-path: var(--clip-six); 
+        transform: translate(calc(var(--shimmy-distance) * -1%)); 
+      }
+      40% { 
+        clip-path: var(--clip-six); 
+        transform: translate(calc(var(--shimmy-distance) * 1%)); 
+      }
+      50% { 
+        clip-path: var(--clip-six); 
+        transform: translate(0, 0); 
+      }
+      55% { 
+        clip-path: var(--clip-seven); 
+        transform: translate(calc(var(--shimmy-distance) * 1%), 0); 
+      }
+      60% { 
+        clip-path: var(--clip-seven); 
+        transform: translate(0, 0); 
+      }
+      31%, 61%, 100% { clip-path: var(--clip-four); }
+    }
+  }
+
+  @layer delays {
+    .modal:not(:popover-open) {
+      --base-delay: 0s;
+    }
+    
+    .modal[data-action] {
+      --base-delay: 0.35s;
+    }
+    
+    .modal:not(:popover-open) {
+      &::before, &::after {
+        transition-delay: calc(var(--base-delay) + 0.325s);
+      }
+      .body__backdrop, .modal__body, .body__content {
+        transition-delay: calc(var(--base-delay) + 0.075s);
+      }
+      h2 span, h2::after, .body__text, .modal__actions {
+        transition-delay: var(--base-delay);
+      }
+    }
+    
+    .modal[data-action] {
+      &::before, &::after {
+        transition-delay: calc(var(--base-delay) + 0.325s);
+      }
+      .body__backdrop, .modal__body, .body__content {
+        transition-delay: calc(var(--base-delay) + 0.075s);
+      }
+      h2 span, h2::after, .body__text, .modal__actions {
+        transition-delay: var(--base-delay);
+      }
+    }
+    
+    .modal:popover-open {
+      &::before, &::after {
+        animation-delay: 0.2s;
+        transition-delay: 0s;
+      }
+      .body__backdrop, .modal__body, .body__content {
+        transition-delay: 0.22s;
+      }
+      h2 span, h2::after, .body__text {
+        transition-delay: 0.325s;
+      }
+      h2::after {
+        transition-timing-function: ease-out;
+      }
+      .modal__actions {
+        transition-delay: 0.5s;
+      }
+    }
+  }
+
+  @layer transition {
+    .modal {
+      transition-property: display, overlay;
+      transition-duration: 1s;
+      transition-behavior: allow-discrete;
+      transition-timing-function: ease-out;
+    }
+
+    .modal[data-action] {
+      transition-duration: 1s;
+    }
+
+    .modal:popover-open {
+      transition-duration: 1s;
+    }
+
+    .modal::after,
+    .modal::before {
+      transition-property: opacity, translate;
+      transition-duration: 0.2s;
+      transition-timing-function: ease-out;
+      translate: -25% 0;
+      opacity: 0;
+    }
+
+    .modal h2::after {
+      transform-origin: 0 50%;
+      transition-duration: 0.26s;
+      transition-property: scale;
+      transition-timing-function: ease-in;
+      scale: 0 1;
+    }
+
+    .modal h2 span {
+      opacity: 1;
+      transition-property: opacity;
+      transition-timing-function: ease-out;
+      transition-duration: 0.26s;
+    }
+
+    .modal .body__backdrop {
+      transition-property: translate;
+      transition-duration: 0.26s;
+      translate: calc(-100% - (2 * var(--border))) 0;
+    }
+
+    .modal .modal__body,
+    .modal .body__content {
+      transition-property: clip-path;
+      transition-duration: 0.26s;
+      clip-path: inset(0 calc(100% + (2 * var(--border))) 0 0);
+    }
+
+    .modal .body__text {
+      opacity: 0;
+      translate: 0 -1lh;
+      transition-property: opacity, translate;
+      transition-duration: 0.26s;
+      transition-timing-function: ease-out;
+    }
+
+    .modal .modal__actions {
+      transition-property: translate, opacity;
+      transition-duration: 0.1s;
+      transition-timing-function: ease-out;
+      opacity: 0;
+      translate: -24px 0;
+    }
+
+    .modal:popover-open {
+      &::before, &::after {
+        opacity: 1;
+        translate: var(--border) 0;
+      }
+      &::before {
+        animation: flicker 0.625s var(--flicker) none;
+      }
+      .body__backdrop {
+        translate: 0 0;
+      }
+      .body__content {
+        clip-path: inset(0 calc(var(--border) * -1) 0 0);
+      }
+      .modal__body {
+        clip-path: inset(0 calc(var(--border) * -1) 0 0);
+      }
+      h2 span {
+        opacity: 1;
+      }
+      h2::after {
+        scale: 1 1;
+      }
+      .body__text {
+        translate: 0 0;
+        opacity: 1;
+      }
+      .modal__actions {
+        opacity: 1;
+        translate: 0 0;
+      }
+    }
+
+    @starting-style {
+      .modal:popover-open {
+        opacity: 0;
+
+        &::before, &::after {
+          opacity: 0;
+          translate: -25% 0;
+        }
+
+        .modal__actions {
+          translate: -24px 0;
+          opacity: 0;
+        }
+
+        .body__backdrop {
+          translate: calc(-100% - (2 * var(--border))) 0;
+        }
+
+        .body__text {
+          opacity: 0;
+          translate: 0 -1lh;
+        }
+
+        .body__content {
+          clip-path: inset(0 calc(100% + (2 * var(--border))) 0 0);
+        }
+
+        .modal__body {
+          clip-path: inset(0 calc(100% + (2 * var(--border))) 0 0);
+        }
+
+        h2 span {
+          opacity: 0;
+        }
+
+        h2::after {
+          scale: 0 1;
+        }
+      }
+    }
+
+    @keyframes flicker {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+
+    @keyframes bg-flicker {
+      0% { background: light-dark(hsl(0 0% 100% / 0.65), hsl(0 0% 0% / 0.65)); }
+      100% { background: var(--accent); }
+    }
+  }
+
+  @layer backdrop {
+    .body__backdrop {
+      position: absolute;
+      inset: 0;
+    }
+
+    .body__backdrop::after {
+      content: '';
+      position: absolute;
+      left: 100%;
+      top: 2rem;
+      width: calc(2 * var(--border));
+      height: 40%;
+      background: var(--accent);
+      opacity: 0.7;
+      clip-path: polygon(0 0, 0 100%, 100% calc(100% - 6px), 100% 6px);
+    }
+
+    .backdrop {
+      position: absolute;
+      z-index: -1;
+      inset: 0;
+      background: transparent;
+      clip-path: var(--clip);
+      pointer-events: none;
+      backdrop-filter: saturate(180%) blur(6px);
+    }
+
+    .backdrop::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: var(--accent);
+      translate: 0 0;
+      border: var(--border) solid #0000;
+      clip-path: var(--clip);
+      mask: linear-gradient(#0000 0% 100%), linear-gradient(#fff 0% 100%);
+      mask-clip: padding-box, border-box;
+      mask-repeat: no-repeat;
+      mask-composite: intersect;
+      z-index: 2;
+    }
+
+    .backdrop .corner {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      height: var(--corner);
+      width: var(--corner);
+    }
+
+    .backdrop .corner::after {
+      content: '';
+      height: calc(var(--border) * 2);
+      width: 200%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+      transform: rotate(135deg);
+      background: var(--accent);
+    }
+
+    .modal::after,
+    .modal::before {
+      content: '';
+      position: absolute;
+      top: 1px;
+      bottom: 1px;
+      right: 100%;
+      width: 1rem;
+      border: var(--border) solid var(--accent);
+      translate: var(--border) 0;
+      backdrop-filter: saturate(180%) blur(6px);
+    }
+
+    .modal::before {
+      background: var(--accent);
+      mask: linear-gradient(#fff, hsl(0 0% 100% / 0.6) 15% 95%, #fff);
+    }
+  }
+</style>
+
+<script>
+  const popover = document.querySelector('#book-a-call-modal') as HTMLElement | null;
+  const actions = popover?.querySelector('.modal__actions') as HTMLElement | null;
+  const modalGlitch = popover?.querySelector('.modal__glitch') as HTMLElement | null;
+  const bookCallButton = document.querySelector('button[popovertarget="book-a-call-modal"]') as HTMLButtonElement | null;
+  
+  // Create and preload the audio
+  const audioTheme = new Audio('/book_a_call.wav');
+  audioTheme.preload = 'auto';
+  audioTheme.volume = 0.7; // Adjust volume as needed
+  
+    const playThemeSound = async () => {
+    try {
+      audioTheme.currentTime = 0; // Reset to beginning
+      await audioTheme.play();
+    } catch (err) {
+      console.error(err);
+      // Try alternative path
+      try {
+        const altAudio = new Audio('/book_a_call.wav');
+        altAudio.volume = 0.7;
+        await altAudio.play();
+      } catch (altErr) {
+        console.error(altErr);
+      }
+    }
+  };
+  
+  const handleKeyPress = (event: KeyboardEvent) => {
+    const { key } = event;
+    if (key === 'Escape') {
+      if (popover) popover.dataset.action = 'Cancel';
+    } else if (key === 'Enter' && !actions?.matches(':focus-within')) {
+      if (popover) {
+        popover.dataset.action = 'Proceed';
+        popover.hidePopover();
+      }
+    }
+  };
+
+  let glitched = false;
+  let glitchClock: number | undefined;
+
+  const kickOff = () => {
+    glitchClock = window.setTimeout(() => {
+      if (modalGlitch) {
+        modalGlitch.style.setProperty('animation-name', 'glitch');
+        requestAnimationFrame(async () => {
+          await Promise.allSettled(
+            modalGlitch.getAnimations().map((a) => a.finished)
+          );
+          glitched = true;
+          modalGlitch.style.removeProperty('animation-name');
+          kickOff();
+        });
+      }
+    }, !glitched ? 1500 : Math.random() * 10000 + 2000);
+  };
+
+  // Add click event listener to the Book a Call button
+  if (bookCallButton) {
+    bookCallButton.addEventListener('click', async (event) => {
+      await playThemeSound();
+    });
+  }
+
+  if (popover && actions) {
+    popover.addEventListener('toggle', async (event: Event) => {
+      const toggleEvent = event as ToggleEvent;
+      if (toggleEvent.newState === 'open') {
+        window.addEventListener('keydown', handleKeyPress);
+        kickOff();
+      } else {
+        if (glitchClock !== undefined) clearTimeout(glitchClock);
+        glitched = false;
+        await Promise.allSettled(popover.getAnimations().map((a) => a.finished));
+        window.removeEventListener('keydown', handleKeyPress);
+        delete popover.dataset.action;
+      }
+    });
+
+    actions.addEventListener('click', (event: Event) => {
+      const target = event.target as HTMLElement;
+      if (target.tagName === 'BUTTON') {
+        const button = target as HTMLButtonElement;
+        if (popover && button.dataset.action) {
+          popover.dataset.action = button.dataset.action;
+        }
+      }
+    });
+  }
+</script>

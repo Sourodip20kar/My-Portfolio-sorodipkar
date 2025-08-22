@@ -1,0 +1,29 @@
+---
+import clsx from "clsx/lite";
+
+type Props = {
+    className?: string;
+    size?: "default" | "large";
+}
+
+const { size = "default", className } = Astro.props;
+---
+
+<h1
+    class={clsx(
+        "text-white font-bold text-balance audiowide-regular",
+        size === "default" && "text-4xl md:text-6xl xl:text-8xl tracking-tight",
+        size === "large" && "text-7xl sm:text-8xl md:text-[120px] lg:text-[160px] tracking-tighter",
+        className,
+    )}
+>
+    <slot />
+</h1>
+
+<style>
+.audiowide-regular {
+  font-family: "Audiowide", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+</style>

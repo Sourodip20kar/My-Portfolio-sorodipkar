@@ -1,0 +1,807 @@
+---
+import H1 from "../components/h1.astro";
+import RootLayout from "../layouts/RootLayout.astro";
+import Footer from "../components/footer.astro";
+import DotGrid from "../components/dot-grid";
+import CopyHandler from "../components/CopyHandler";
+import ContactModal from "../components/ContactModal.astro";
+
+const defaultTitle = "Contact - Sourodip Kar";
+const defaultDescription = "Get in touch with Sourodip Kar for new projects and collaborations.";
+---
+
+<!-- Exclude this page from SPA navigation to force full page refresh -->
+<RootLayout title={defaultTitle} description={defaultDescription}>
+     <!-- DotGrid Background -->
+     <div class="fixed inset-0 -z-10 dot-grid-container">
+          <DotGrid
+               className="w-full h-full"
+               client:load
+          />
+     </div>
+
+     <!-- Main Container - Full viewport height, no scroll -->
+     <div class="contact-container">
+          <!-- Central Content Card -->
+          <div class="contact-card" style="padding-bottom: 30px;padding-top: 30px;">
+               <!-- Border gradient elements -->
+               <div class="right-border"></div>
+               <div class="bottom-border"></div>
+               
+               <!-- Header Section -->
+               <div class="contact-header">
+                    <H1 className="contact-title">Let's Connect</H1>
+                    <p class="contact-subtitle" style="font-family: 'Space Mono', monospace;">
+                         Ready to build something amazing together? 
+                         <span class="highlight-text">Let's start the conversation.</span>
+                    </p>
+               </div>
+
+               <!-- Contact Methods Grid -->
+               <div class="contact-methods">
+                    <!-- Email Card -->
+                    <div class="contact-method-card email-card">
+                         <div class="method-card-right-border"></div>
+                         <div class="method-card-bottom-border"></div>
+                         <div class="method-icon">
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                   <path d="M20 4H4C2.9 4 2 4.9 2 6V18C2 19.1 2.9 20 4 20H20C21.1 20 22 19.1 22 18V6C22 4.9 21.1 4 20 4ZM20 8L12 13L4 8V6L12 11L20 6V8Z" fill="currentColor"/>
+                              </svg>
+                         </div>
+                         <h3>Email</h3>
+                         <span 
+                              class="copyable group cursor-pointer contact-link" 
+                              data-copy="51.sourodipkar2002n.i.t@gmail.com"
+                              style="font-family: 'Space Mono', monospace; display: inline-flex; align-items: center; gap: 4px;"
+                         >
+                              51.sourodipkar2002n.i.t@gmail.com
+                              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="inline-block text-zinc-400 group-hover:text-zinc-100 transition-colors">
+                                   <path d="M19.53 8L14 2.47C13.8595 2.32931 13.6688 2.25018 13.47 2.25H11C10.2707 2.25 9.57118 2.53973 9.05546 3.05546C8.53973 3.57118 8.25 4.27065 8.25 5V6.25H7C6.27065 6.25 5.57118 6.53973 5.05546 7.05546C4.53973 7.57118 4.25 8.27065 4.25 9V19C4.25 19.7293 4.53973 20.4288 5.05546 20.9445C5.57118 21.4603 6.27065 21.75 7 21.75H14C14.7293 21.75 15.4288 21.4603 15.9445 20.9445C16.4603 20.4288 16.75 19.7293 16.75 19V17.75H17C17.7293 17.75 18.4288 17.4603 18.9445 16.9445C19.4603 16.4288 19.75 15.7293 19.75 15V8.5C19.7421 8.3116 19.6636 8.13309 19.53 8ZM14.25 4.81L17.19 7.75H14.25V4.81ZM15.25 19C15.25 19.3315 15.1183 19.6495 14.8839 19.8839C14.6495 20.1183 14.3315 20.25 14 20.25H7C6.66848 20.25 6.35054 20.1183 6.11612 19.8839C5.8817 19.6495 5.75 19.3315 5.75 19V9C5.75 8.66848 5.8817 8.35054 6.11612 8.11612C6.35054 7.8817 6.66848 7.75 7 7.75H8.25V15C8.25 15.7293 8.53973 16.4288 9.05546 16.9445C9.57118 17.4603 10.2707 17.75 11 17.75H15.25V19ZM17 16.25H11C10.6685 16.25 10.3505 16.1183 10.1161 15.8839C9.8817 15.6495 9.75 15.3315 9.75 15V5C9.75 4.66848 9.8817 4.35054 10.1161 4.11612C10.3505 3.8817 10.6685 3.75 11 3.75H12.75V8.5C12.7526 8.69811 12.8324 8.88737 12.9725 9.02747C13.1126 9.16756 13.3019 9.24741 13.5 9.25H18.25V15C18.25 15.3315 18.1183 15.6495 17.8839 15.8839C17.6495 16.1183 17.3315 16.25 17 16.25Z" fill="currentColor"/>
+                              </svg>
+                         </span>
+                    </div>
+
+                    <!-- Location Card -->
+                    <div class="contact-method-card location-card">
+                         <div class="method-card-right-border"></div>
+                         <div class="method-card-bottom-border"></div>
+                         <div class="method-icon">
+                              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                   <path d="M12 2C8.13 2 5 5.13 5 9C5 14.25 12 22 12 22S19 14.25 19 9C19 5.13 15.87 2 12 2ZM12 11.5C10.62 11.5 9.5 10.38 9.5 9S10.62 6.5 12 6.5S14.5 7.62 14.5 9S13.38 11.5 12 11.5Z" fill="currentColor"/>
+                              </svg>
+                         </div>
+                         <h3>Location</h3>
+                         <p class="location-text" style="font-family: 'Space Mono', monospace;">Barrackpore, West Bengal<br>India</p>
+                    </div>
+               </div>
+
+               <!-- Social Links -->
+               <div class="social-section">
+                    <h3 class="social-title">Find me on</h3>
+                    <div class="social-links">
+                         <a href="https://github.com/Sourodip20kar" target="_blank" class="social-link github" style="font-family: 'Space Mono', monospace;">
+                              <div class="social-right-border"></div>
+                              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                   <path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/>
+                              </svg>
+                              GitHub
+                         </a>
+                         <a href="https://www.linkedin.com/in/sourodip20kar/" target="_blank" class="social-link linkedin" style="font-family: 'Space Mono', monospace;">
+                              <div class="social-right-border"></div>
+                              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                   <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                              </svg>
+                              LinkedIn
+                         </a>
+                         <a href="https://x.com/SourodipKar" target="_blank" class="social-link twitter" style="font-family: 'Space Mono', monospace;">
+                              <div class="social-right-border"></div>
+                              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                              </svg>
+                              Twitter
+                         </a>
+                         <a href="https://www.instagram.com/sourodipkar/" target="_blank" class="social-link instagram" style="font-family: 'Space Mono', monospace;">
+                              <div class="social-right-border"></div>
+                              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" fill="currentColor">
+                                   <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                              </svg>
+                              Instagram
+                         </a>
+                    </div>
+               </div>
+
+               <!-- Call to Action -->
+               <div class="cta-section">
+                    <p class="cta-text" style="font-family: 'Space Mono', monospace;">
+                         Have a project in mind? Let's discuss.
+                    </p>
+                    <button onclick="openContactModal()" class="cta-button" style="font-family: 'Space Mono', monospace;">
+                         <div class="cta-right-border"></div>
+                         Start a Conversation
+                         <svg width="16" height="16" viewBox="0 0 24 24" fill="none">
+                              <path d="M7 17L17 7M17 7H7M17 7V17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                         </svg>
+                    </button>
+               </div>
+          </div>
+
+          <!-- Footer positioned within viewport -->
+          <div class="footer-wrapper">
+               <Footer />
+          </div>
+     </div>
+
+     <!-- Copy functionality components -->
+     <CopyHandler client:load />
+     
+     <!-- Sliding Contact Modal - simple version since we have full page refresh -->
+     <ContactModal client:load />
+</RootLayout>
+
+<!-- Add this script to exclude this page from SPA navigation -->
+<script>
+  // Mark this page to be excluded from View Transitions
+  if (typeof document !== 'undefined') {
+    document.documentElement.setAttribute('data-astro-transition-persist', 'false');
+    
+    // Alternative method: Add specific meta to exclude from client routing
+    const meta = document.createElement('meta');
+    meta.name = 'astro-skip-transitions';
+    meta.content = 'true';
+    document.head.appendChild(meta);
+  }
+</script>
+
+<style>
+/* Contact Page Styles - Same as before */
+.contact-container {
+     min-height: 100vh;
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: space-between;
+     padding: 1rem;
+     position: relative;
+     z-index: 1;
+}
+
+/* Footer wrapper for proper positioning */
+.footer-wrapper {
+     position: relative;
+     z-index: 10;
+     width: 100%;
+}
+
+.contact-card {
+     background: transparent;
+     backdrop-filter: blur(2px);
+     border: 1px solid rgba(63, 63, 70, 0.5);
+     border-radius: 0px;
+     padding: 2rem;
+     max-width: 900px;
+     width: 100%;
+     box-shadow: 
+          0 10px 40px rgba(0, 0, 0, 0.3),
+          0 0 0 1px rgba(255, 255, 255, 0.05);
+     position: relative;
+     overflow: hidden;
+     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 40px), calc(100% - 40px) 100%, 0 100%);
+}
+
+.contact-card::after {
+     content: '';
+     position: absolute;
+     bottom: -1px;
+     right: 40px;
+     width: 2px;
+     height: 57px;
+     background: rgb(255, 255, 255);
+     transform: rotate(45deg);
+     transform-origin: bottom;
+     z-index: 10;
+}
+
+/* Right border gradient */
+.right-border {
+     position: absolute;
+     top: 0;
+     right: -1px;
+     width: 2px;
+     height: calc(100% - 20px);
+     background: linear-gradient(10deg, rgba(255, 255, 255) 30%, transparent, transparent, transparent);
+     z-index: 2;
+}
+
+/* Bottom border gradient */
+.bottom-border {
+     position: absolute;
+     bottom: -1px;
+     right: -320px;
+     width: calc(100% - 20px);
+     height: 2px;
+     background: linear-gradient(10deg,transparent, transparent, transparent, rgba(255, 255, 255) 30%);
+     z-index: 2;
+}
+
+.contact-card::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     height: 1px;
+     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+     box-shadow: 0 -10px 30px rgba(255, 255, 255, 0.826), 0 -5px 15px rgba(255, 255, 255, 0.958);
+}
+
+/* Header Section */
+.contact-header {
+     text-align: center;
+     margin-bottom: 2rem;
+}
+
+.contact-title {
+     font-size: 2rem;
+     font-weight: 700;
+     background: linear-gradient(135deg, #ffffff, #a1a1aa);
+     background-clip: text;
+     -webkit-background-clip: text;
+     -webkit-text-fill-color: transparent;
+     margin-bottom: 0.75rem;
+     font-family: 'Space Mono', monospace;
+}
+
+.contact-subtitle {
+     font-size: 1rem;
+     color: #a1a1aa;
+     line-height: 1.5;
+     max-width: 500px;
+     margin: 0 auto;
+}
+
+.highlight-text {
+     color: #e4e4e7;
+     font-weight: 500;
+}
+
+/* Contact Methods Grid */
+.contact-methods {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     gap: 1.25rem;
+     margin-bottom: 2rem;
+}
+
+.contact-method-card {
+     background: rgba(39, 39, 42, 0.6);
+     border: 1px solid rgba(63, 63, 70, 0.3);
+     border-radius: 0px;
+     padding: 1.25rem;
+     text-align: center;
+     transition: all 0.3s ease;
+     position: relative;
+     overflow: hidden;
+     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%);
+}
+
+/* Hover border effects for contact method cards */
+.contact-method-card::before {
+     content: '';
+     position: absolute;
+     bottom: -1px;
+     left: 0;
+     width: calc(100% - 16px);
+     height: 2px;
+     background: rgba(255, 255, 255, 0.3);
+     transform: scaleX(0);
+     transform-origin: left;
+     transition: transform 0.2s ease;
+     transition-delay: 0.4s;
+     z-index: 2;
+}
+
+.contact-method-card::after {
+     content: '';
+     position: absolute;
+     bottom: -1px;
+     right: 15px;
+     width: 2px;
+     height: 23px;
+     background: rgb(255, 255, 255);
+     transform: rotate(45deg) scaleY(0);
+     transform-origin: bottom;
+     transition: transform 0.2s ease;
+     transition-delay: 0.2s;
+     z-index: 10;
+}
+
+.contact-method-card .method-card-right-border {
+     position: absolute;
+     top: 0;
+     right: -1px;
+     width: 2px;
+     height: calc(100% - 10px);
+     background: linear-gradient(10deg, rgba(255, 255, 255) 30%, transparent, transparent, transparent);
+     transform: scaleY(0);
+     transform-origin: bottom;
+     transition: transform 0.2s ease;
+     transition-delay: 0s;
+     z-index: 2;
+}
+
+.contact-method-card .method-card-bottom-border {
+     position: absolute;
+     bottom: -1px;
+     right: -230px;
+     width: calc(100% - 10px);
+     height: 2.5px;
+     background: linear-gradient(10deg,transparent, transparent, transparent, rgba(255, 255, 255) 30%);
+     transform: scaleX(0);
+     transform-origin: left;
+     transition: transform 0.2s ease;
+     transition-delay: 0.4s;
+     z-index: 2;
+}
+
+.contact-method-card:hover {
+     transform: translateY(-2px);
+     border-color: rgba(0, 0, 0, 0.4);
+     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Trigger animations on hover */
+.contact-method-card:hover::before {
+     transform: scaleX(1);
+     transition-delay: 0s;
+}
+
+.contact-method-card:hover::after {
+     transform: rotate(45deg) scaleY(1);
+     transition-delay: 0.2s;
+}
+
+.contact-method-card:hover .method-card-right-border {
+     transform: scaleY(1);
+     transition-delay: 0.4s;
+}
+
+.contact-method-card:hover .method-card-bottom-border {
+     transform: scaleX(1);
+     transition-delay: 0s;
+}
+
+.contact-method-card::before {
+     content: '';
+     position: absolute;
+     top: 0;
+     left: 0;
+     right: 0;
+     height: 1px;
+     background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+     opacity: 0;
+     transition: opacity 0.3s ease;
+}
+
+.contact-method-card:hover::before {
+     opacity: 1;
+}
+
+.method-icon {
+     display: inline-flex;
+     align-items: center;
+     justify-content: center;
+     width: 40px;
+     height: 40px;
+     background: linear-gradient(135deg, #6366f1, #8b5cf6);
+     border-radius: 12px;
+     margin-bottom: 0.75rem;
+     color: white;
+}
+
+.contact-method-card h3 {
+     font-size: 1rem;
+     font-weight: 600;
+     color: #e4e4e7;
+     margin-bottom: 0.5rem;
+     font-family: 'Space Mono', monospace;
+}
+
+.contact-link {
+     color: #a1a1aa;
+     text-decoration: none;
+     font-size: 0.875rem;
+     transition: color 0.3s ease;
+     word-break: break-all;
+}
+
+.contact-link:hover {
+     color: #6366f1;
+}
+
+/* Copy functionality styles */
+.copyable {
+     transition: all 0.2s ease;
+}
+
+.copyable:hover {
+     color: #6366f1 !important;
+}
+
+.copyable svg {
+     opacity: 0.6;
+     transition: opacity 0.2s ease;
+}
+
+.copyable:hover svg {
+     opacity: 1;
+}
+
+.location-text {
+     color: #a1a1aa;
+     font-size: 0.875rem;
+     line-height: 1.3;
+}
+
+/* Social Section */
+.social-section {
+     margin-bottom: 2rem;
+     text-align: center;
+}
+
+.social-title {
+     font-size: 1rem;
+     font-weight: 600;
+     color: #e4e4e7;
+     margin-bottom: 1rem;
+     font-family: 'Space Mono', monospace;
+}
+
+.social-links {
+     display: grid;
+     grid-template-columns: repeat(4, 1fr);
+     gap: 0.75rem;
+}
+
+.social-link {
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     gap: 0.5rem;
+     padding: 0.75rem 1rem;
+     background: rgba(39, 39, 42, 0.6);
+     border: 1px solid rgba(63, 63, 70, 0.3);
+     border-radius: 0px;
+     color: #a1a1aa;
+     text-decoration: none;
+     font-size: 0.8rem;
+     font-weight: 500;
+     transition: all 0.3s ease;
+     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%);
+     position: relative;
+     overflow: hidden;
+}
+
+/* Hover border effects for social links */
+.social-link::before {
+     content: '';
+     position: absolute;
+     bottom: -1px;
+     left: 0;
+     width: calc(100% - 12px);
+     height: 1px;
+     background: rgba(255, 255, 255, 0.3);
+     transform: scaleX(0);
+     transform-origin: left;
+     transition: transform 0.2s ease;
+     z-index: 2;
+}
+
+.social-link::after {
+     content: '';
+     position: absolute;
+     bottom: -1px;
+     right: 12px;
+     width: 1px;
+     height: 17px;
+     background: rgb(255, 255, 255);
+     transform: rotate(45deg) scaleY(0);
+     transform-origin: bottom;
+     transition: transform 0.2s ease 0.1s;
+     z-index: 10;
+}
+
+.social-link .social-right-border {
+     position: absolute;
+     top: 0;
+     right: -1px;
+     width: 1px;
+     height: calc(100% - 12px);
+     background: rgba(255, 255, 255, 0.3);
+     transform: scaleY(0);
+     transform-origin: bottom;
+     transition: transform 0.2s ease 0.2s;
+     z-index: 2;
+}
+
+.social-link:hover {
+     transform: translateY(-1px);
+     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Trigger animations on social link hover */
+.social-link:hover::before {
+     transform: scaleX(1);
+}
+
+.social-link:hover::after {
+     transform: rotate(45deg) scaleY(1);
+}
+
+.social-link:hover .social-right-border {
+     transform: scaleY(1);
+}
+
+.social-link.github:hover {
+     border-color: #6366f1;
+     color: #6366f1;
+}
+
+.social-link.linkedin:hover {
+     border-color: #0ea5e9;
+     color: #0ea5e9;
+}
+
+.social-link.twitter:hover {
+     border-color: #1d9bf0;
+     color: #1d9bf0;
+}
+
+.social-link.instagram:hover {
+     border-color: #e11d48;
+     color: #e11d48;
+}
+
+/* CTA Section */
+.cta-section {
+     text-align: center;
+}
+
+.cta-text {
+     color: #a1a1aa;
+     font-size: 0.9rem;
+     line-height: 1.5;
+     margin-bottom: 1.25rem;
+}
+
+.cta-button {
+     display: inline-flex;
+     align-items: center;
+     gap: 0.5rem;
+     padding: 0.875rem 1.75rem;
+     background: linear-gradient(135deg, #6366f1, #8b5cf6);
+     color: white;
+     border: none;
+     font-weight: 600;
+     font-size: 0.9rem;
+     border-radius: 0px;
+     transition: all 0.3s ease;
+     box-shadow: 0 4px 15px rgba(99, 102, 241, 0.3);
+     clip-path: polygon(0 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%);
+     position: relative;
+     overflow: hidden;
+     cursor: pointer;
+}
+
+/* Hover border effects for CTA button */
+.cta-button::before {
+     content: '';
+     position: absolute;
+     bottom: -1px;
+     left: 0;
+     width: calc(100% - 16px);
+     height: 2px;
+     background: rgba(255, 255, 255, 0.4);
+     transform: scaleX(0);
+     transform-origin: left;
+     transition: transform 0.25s ease;
+     z-index: 2;
+}
+
+.cta-button::after {
+     content: '';
+     position: absolute;
+     bottom: -1px;
+     right: 16px;
+     width: 2px;
+     height: 23px;
+     background: rgb(255, 255, 255);
+     transform: rotate(45deg) scaleY(0);
+     transform-origin: bottom;
+     transition: transform 0.25s ease 0.125s;
+     z-index: 10;
+}
+
+.cta-button .cta-right-border {
+     position: absolute;
+     top: 0;
+     right: -1px;
+     width: 2px;
+     height: calc(100% - 16px);
+     background: rgba(255, 255, 255, 0.4);
+     transform: scaleY(0);
+     transform-origin: bottom;
+     transition: transform 0.25s ease 0.25s;
+     z-index: 2;
+}
+
+.cta-button:hover {
+     transform: translateY(-2px);
+     box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+}
+
+/* Trigger animations on CTA button hover */
+.cta-button:hover::before {
+     transform: scaleX(1);
+}
+
+.cta-button:hover::after {
+     transform: rotate(45deg) scaleY(1);
+}
+
+.cta-button:hover .cta-right-border {
+     transform: scaleY(1);
+}
+
+.cta-button svg {
+     transition: transform 0.3s ease;
+}
+
+.cta-button:hover svg {
+     transform: translate(2px, -2px);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+     .contact-container {
+          padding: 0.5rem;
+          align-items: center;
+          justify-content: center;
+          padding-top: 0rem;
+          padding-bottom: 0.5rem;
+          min-height: 100vh;
+          max-height: 100vh;
+          overflow: hidden;
+     }
+
+     .contact-card {
+          padding: 1rem;
+          border-radius: 20px;
+          height: auto;
+          max-height: none;
+          overflow: visible;
+          clip-path: polygon(0 0, 100% 0, 100% calc(100% - 40px), calc(100% - 40px) 100%, 0 100%);
+     }
+
+     /* Mobile border effects - same as desktop */
+     .contact-card::after {
+          bottom: -1px;
+          right: 40px;
+          width: 2px;
+          height: 57px;
+          background: rgb(255, 255, 255);
+          transform: rotate(45deg);
+          transform-origin: bottom;
+          z-index: 10;
+     }
+
+     .right-border {
+          position: absolute;
+          top: 100px;
+          right: -1px;
+          width: 2.5px;
+          height: calc(100% - 20px);
+          background: linear-gradient(10deg, rgba(255, 255, 255) 30%, transparent,transparent,transparent,transparent);
+          z-index: 2;
+     }
+
+     .bottom-border {
+          position: absolute;
+          bottom: -1px;
+          right: -100px;
+          width: calc(100% - 20px);
+          height: 2.5px;
+          background: linear-gradient(10deg, transparent,transparent,transparent,transparent, rgba(255, 255, 255) 30%);
+          z-index: 2;
+     }
+
+     .contact-title {
+          font-size: 1.75rem;
+     }
+
+     .contact-subtitle {
+          font-size: 0.9rem;
+     }
+
+     .contact-methods {
+          grid-template-columns: 1fr;
+          gap: 0.75rem;
+          margin-bottom: 1rem;
+     }
+
+     .contact-method-card {
+          padding: 0.75rem;
+     }
+
+     .method-icon {
+          width: 28px;
+          height: 28px;
+     }
+
+     .social-section {
+          margin-bottom: 0.75rem;
+     }
+
+     .social-links {
+          grid-template-columns: repeat(2, 1fr);
+          gap: 0.75rem;
+     }
+
+     .social-link {
+          padding: 0.625rem 0.875rem;
+          font-size: 0.75rem;
+     }
+
+     .cta-button {
+          padding: 0.625rem 1.25rem;
+          font-size: 0.75rem;
+     }
+}
+
+@media (max-width: 480px) {
+     .contact-card {
+          padding: 0.75rem;
+          margin: 0.25rem;
+     }
+
+     .contact-title {
+          font-size: 1.4rem;
+     }
+
+     .contact-subtitle {
+          font-size: 0.75rem;
+     }
+
+     .contact-header {
+          margin-bottom: 0.75rem;
+     }
+
+     .contact-methods {
+          margin-bottom: 0.5rem;
+     }
+
+     .social-section {
+          margin-bottom: 0.5rem;
+     }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+     * {
+          transition: none !important;
+          animation: none !important;
+     }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+     .contact-card {
+          border-color: #ffffff;
+          background: rgba(0, 0, 0, 0.9);
+     }
+
+     .contact-method-card,
+     .social-link {
+          border-color: #ffffff;
+          background: rgba(255, 255, 255, 0.1);
+     }
+}

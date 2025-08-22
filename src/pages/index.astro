@@ -1,0 +1,121 @@
+---
+import H1 from "../components/h1.astro";
+import Link from "../components/link.astro";
+import Navigation from "../components/navigation";
+import RootLayout from "../layouts/RootLayout.astro";
+import WarpBackground from "../components/warp-background";
+import AvailableForWork from "../components/available.astro";
+import SplineScene from "../components/SplineScene";
+import CyberModal from "../components/CyberModal.astro";
+---
+
+<RootLayout>
+	<main>
+		<div class="group relative w-full min-h-dvh flex items-center justify-center overflow-x-hidden">
+			<div class="absolute w-full h-dvh -z-10">
+				<WarpBackground
+    			colors={["#09090b", "#27272a", "#52525b"]}
+    			speed={3.5}
+    			swirl={0.3}
+    			swirlIterations={10}
+    			shapeScale={0.5}
+    			client:load
+/>
+			</div>
+
+			<div class="p-3 sm:p-4 lg:p-8 absolute w-full h-dvh flex flex-col justify-between z-10">
+				<div class="pt-2 sm:pt-0">
+					<H1 size="large"> Sourodip <br /> Kar </H1>
+				</div>
+
+				<div class="pb-2 sm:pb-0">
+					<AvailableForWork className="py-3 sm:py-4"/>
+					<div class="mb-2 sm:mb-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 items-center justify-between">
+						<div class="flex items-center gap-3 sm:gap-4 flex-wrap justify-center sm:justify-start mobile-buttons-container">
+							<Link href="https://drive.google.com/file/d/1lBJsWUniypVohoht14JxGP1V8eEaQILC/view?usp=sharing" target="_blank" rel="noopener noreferrer">Check Resume</Link>
+							<CyberModal />
+						</div>
+
+						<Navigation client:load>
+							{/* <Link href="/projects" variant="secondary">Projects</Link> */}
+							{/* <Link href="/blog" variant="secondary">Blog</Link> */}
+							<Link href="/about" variant="secondary">About</Link>
+							<Link href="/contact" variant="secondary">Contact</Link>
+						</Navigation>
+					</div>
+				</div>
+			</div>
+		</div>
+	</main>
+</RootLayout>
+
+<style>
+  /* Mobile-specific styles for index page */
+  @media (max-width: 640px) {
+    /* Make Check Resume and My Application buttons side by side on mobile */
+    .mobile-buttons-container {
+      display: flex !important;
+      flex-direction: row !important;
+      justify-content: center !important;
+      align-items: center !important;
+      gap: 0.75rem !important;
+      flex-wrap: nowrap !important;
+      width: 100% !important;
+    }
+    
+    /* Ensure buttons fit properly side by side */
+    .mobile-buttons-container > * {
+      flex-shrink: 1 !important;
+      min-width: 0 !important;
+      max-width: calc(50% - 0.375rem) !important;
+      white-space: nowrap !important;
+    }
+    
+    /* Override global CSS conflicts for mobile buttons */
+    .mobile-buttons-container a,
+    .mobile-buttons-container button {
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      min-height: auto !important;
+      height: auto !important;
+      padding: 0.5rem 0.75rem !important;
+      font-size: 0.875rem !important;
+    }
+    
+    /* Ensure proper spacing for the entire bottom section */
+    .pb-2.sm\\:pb-0 {
+      padding-bottom: 1rem !important;
+    }
+    
+    /* Fix navigation positioning */
+    .mb-2.sm\\:mb-4 {
+      margin-bottom: 1rem !important;
+      gap: 1rem !important;
+    }
+  }
+  
+  /* Additional mobile fixes for very small screens */
+  @media (max-width: 380px) {
+    .mobile-buttons-container > * {
+      font-size: 0.75rem !important;
+      padding: 0.4rem 0.6rem !important;
+    }
+  }
+
+  /* Safety override: if global mobile rules from global.css interfere,
+     force the intended compact layout for the top mobile buttons only. */
+  @media (max-width: 640px) {
+    .mobile-buttons-container {
+      gap: 0.75rem !important;
+      flex-wrap: nowrap !important;
+      justify-content: center !important;
+    }
+
+    .mobile-buttons-container > * {
+      max-width: calc(50% - 0.375rem) !important;
+      min-width: 0 !important;
+      white-space: nowrap !important;
+    }
+  }
+</style>

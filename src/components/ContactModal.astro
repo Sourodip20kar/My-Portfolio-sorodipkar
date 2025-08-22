@@ -1,0 +1,391 @@
+---
+// ContactModal.astro - Sliding contact form from footer
+---
+
+<!-- Background overlay with blur -->
+<div id="modal-backdrop" class="modal-backdrop">
+</div>
+
+<!-- Contact Modal with fixed dimensions -->
+<div id="contact-modal" class="contact-modal" aria-hidden="true" style="font-family: 'Space Mono', monospace;">
+  <div class="modal-handle" aria-hidden="true">
+    <div class="handle-bar" role="presentation"></div>
+  </div>
+
+  <div class="modal-content">
+    <div class="modal-header">
+      <h3 class="sr-only">Contact form</h3>
+    </div>
+
+    <form id="contact-form" class="contact-form" autocomplete="on" action="/api/contact" method="post">
+  <input type="hidden" id="contact-date" name="data[Date]" />
+  <div class="form-row">
+        <div class="form-group">
+          <label for="contact-name">Name</label>
+          <input
+            type="text"
+            id="contact-name"
+            name="data[Name]"
+            placeholder="Your name"
+            required
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="contact-email">Email</label>
+          <input
+            type="email"
+            id="contact-email"
+            name="data[Email]"
+            placeholder="yourname@example.com"
+            required
+          />
+        </div>
+      </div>
+
+      <div class="form-group" id="message-group">
+        <label for="contact-message" id="message-label">Message</label>
+        <textarea
+          id="contact-message"
+          name="data[Message]"
+          placeholder="What would you like to discuss?"
+          rows="4"
+          required
+          style="resize: none;"
+        ></textarea>
+        <div class="char-counter">
+          <span id="char-count">0</span>/1000
+        </div>
+        <div id="minlength-error" class="minlength-error" style="display:none;">Message must be at least 10 characters</div>
+      </div>
+
+      <button type="submit" class="send-button">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M3 3l18 9-18 9v-7l13-2-13-2V3z" fill="currentColor"/>
+        </svg>
+        <span>Send message</span>
+      </button>
+
+      <div class="availability-status">
+        <div class="status-indicator"></div>
+        <span>Currently available for new opportunities</span>
+      </div>
+    </form>
+  </div>
+</div>
+
+<style>
+  :root { --modal-w: 580px; }
+
+  /* backdrop */
+  .modal-backdrop {
+    position: fixed; inset: 0; background: rgba(0,0,0,0.5);
+    backdrop-filter: blur(var(--backdrop-blur, 6px));
+    opacity: var(--backdrop-opacity, 0); visibility: hidden;
+    transition: opacity 160ms linear, visibility 160ms linear, backdrop-filter 160ms linear;
+    z-index: 900;
+  }
+  .modal-backdrop.show { opacity: 1; visibility: visible; }
+
+  /* modal shell */
+  .contact-modal {
+    position: fixed; left: 50%; bottom: 18px;
+    transform: translateX(-50%) translateY(120%);
+    width: calc(min(var(--modal-w), 92vw)); max-width: var(--modal-w);
+    border-radius: 10px; overflow: hidden;
+    background: #0b0b0c; color: #fff; z-index: 1000;
+    border: 2px solid white;
+    box-shadow: 0 12px 40px rgba(94, 91, 91, 0.6);
+    transition: transform 280ms cubic-bezier(.22,.9,.33,1);
+  }
+  .contact-modal.open { transform: translateX(-50%) translateY(0); }
+
+  /* handle */
+  .modal-handle { height: 44px; display:flex; align-items:center; justify-content:center }
+  .handle-bar { width: 110px; height:8px; background:rgba(255, 255, 255, 0.436); border-radius:6px }
+
+  .modal-content { padding: 2px 28px 28px; }
+  .modal-header { text-align:center; margin-bottom:6px }
+
+  .contact-form { display:block }
+  .form-row { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-bottom:12px }
+  label { display:block; color:#cfcfd6; font-weight:500; margin-bottom:8px }
+  input, textarea {
+    width:100%;
+    padding:12px 14px;
+    background:#0f0f10;
+    border:1px solid rgba(255,255,255,0.04);
+    border-radius:8px;
+    color:#dcdcdc;
+    transition: border-color 0.2s;
+    outline: none;
+  }
+  input:focus, textarea:focus {
+    box-shadow: 0 0 0 3px rgba(252, 252, 252, 0.35), 0 0 12px 2px rgba(203, 200, 200, 0.18);
+  }
+  textarea { min-height:140px; resize:vertical }
+  .form-group.invalid textarea {
+    border:2px solid #ff3b3b;
+    box-shadow: 0 0 0 3px rgba(255,59,59,0.35), 0 0 12px 2px rgba(255,59,59,0.18);
+    outline: none;
+  }
+  .form-group.invalid label { color:#ff3b3b; }
+  .minlength-error { color:#ff3b3b; font-size:13px; margin-top:6px; text-align:left; font-family:inherit; }
+
+  .char-counter { text-align:right; color:#9a9aa0; font-size:12px; margin-top:6px }
+
+  .send-button { display:flex; align-items:center; gap:10px; justify-content:center; width:100%; margin-top:14px; padding:12px 18px; border-radius:10px; background:linear-gradient(135deg, #6366f1, #8b5cf6); color:white; border:none; cursor:pointer }
+
+  .availability-status {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+    margin-top: 16px;
+    color: var(--color-green-300);
+    font-size: 14px;
+    background: rgba(16, 185, 129, 0.06);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(16, 185, 129, 0.28);
+    border-radius: 10px;
+    padding: 8px 18px;
+    box-shadow: 0 6px 18px rgba(16, 185, 129, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.03);
+  }
+  .status-indicator {
+      width: 8px;
+      height: 8px;
+      background-color: hsl(120, 100%, 50%);
+      border-radius: 50%;
+      animation: blink 1.2s infinite ease-in-out;
+      box-shadow: 0 0 8px hsl(120, 100%, 50%);
+    }
+
+    @keyframes blink {
+      0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+      50% {
+        opacity: 0.4;
+        transform: scale(0.8);
+      }
+    }
+
+  @media (max-width:720px){ 
+    .form-row{grid-template-columns:1fr} 
+    .handle-bar{width:80px} 
+    .availability-status{font-size: small;}
+    }
+</style>
+
+<script>
+// @ts-nocheck
+// Simplified version since we have full page refresh on contact page
+(function(){
+    const modal = document.getElementById('contact-modal');
+    const backdrop = document.getElementById('modal-backdrop');
+    if(!modal || !backdrop) return;
+
+    const m = /** @type {HTMLElement} */ (modal);
+    const b = /** @type {HTMLElement} */ (backdrop);
+
+    const handle = m.querySelector('.modal-handle');
+    const form = document.getElementById('contact-form');
+    const msg = document.getElementById('contact-message');
+    const counter = document.getElementById('char-count');
+
+    let isOpen = false, dragging = false, startY = 0, current = 0, drag = 0;
+
+    /**
+     * @param {number} progress
+     */
+    function setBackdrop(progress){
+      const p = Math.max(0, Math.min(1, progress));
+      const opacity = 0.45 * p;
+      const blur = 6 * p;
+      b.style.setProperty('--backdrop-opacity', String(opacity));
+      b.style.setProperty('--backdrop-blur', `${blur}px`);
+      b.classList.toggle('show', p > 0);
+    }
+
+    function open(){
+  if(form instanceof HTMLFormElement) form.reset();
+  if(counter) counter.textContent = '0';
+  // Reset error visuals
+  const group = document.getElementById('message-group');
+  const error = document.getElementById('minlength-error');
+  if(group) group.classList.remove('invalid');
+  if(error) error.style.display = 'none';
+  setBackdrop(1);
+  m.classList.add('open'); 
+  m.setAttribute('aria-hidden','false');
+  document.body.style.overflow = 'hidden'; 
+  isOpen = true;
+    }
+
+    function close(){
+      m.classList.remove('open'); 
+      m.setAttribute('aria-hidden','true');
+      setBackdrop(0);
+      document.body.style.overflow = '';
+      isOpen = false; dragging = false; drag = 0;
+      m.style.transform = '';
+    }
+
+    /** @param {any} e */
+    function getClientY(e){
+      if(e && 'touches' in e && e.touches && e.touches[0]) return e.touches[0].clientY;
+      return e.clientY ?? 0;
+    }
+
+    /** @param {any} e */
+    function onStart(e){
+      if(!isOpen) return;
+      dragging = true;
+      startY = getClientY(e);
+      m.style.transition = 'none';
+      if('cancelable' in e && e.cancelable) e.preventDefault();
+    }
+
+    /** @param {any} e */
+    function onMove(e){
+      if(!dragging) return;
+      current = getClientY(e);
+      drag = Math.max(0, current - startY);
+      const max = Math.min(window.innerHeight * 0.6, drag);
+      const r = 1 - Math.min(0.6, max / (window.innerHeight * 0.6)) * 0.5;
+      const y = max * r;
+      m.style.transform = `translateX(-50%) translateY(${y}px)`;
+      const progress = Math.max(0, 1 - (y / (window.innerHeight * 0.6)));
+      setBackdrop(progress);
+    }
+
+    function onEnd(){
+      if(!dragging) return; 
+      dragging = false;
+      m.style.transition = 'transform 260ms cubic-bezier(.22,.9,.33,1)';
+      const hard = 130; const soft = 40;
+      if(drag > hard){ 
+        close(); 
+      } else if(drag > soft){
+        m.style.transform = `translateX(-50%) translateY(-10px)`;
+        setTimeout(()=>{ 
+          m.style.transform = 'translateX(-50%) translateY(0)'; 
+          setBackdrop(1); 
+        }, 180);
+      } else {
+        m.style.transform = 'translateX(-50%) translateY(0)'; 
+        setBackdrop(1);
+      }
+      drag = 0;
+    }
+
+    // Attach listeners
+    if(handle){
+      handle.addEventListener('mousedown', /** @type {EventListener} */ (onStart));
+      handle.addEventListener('touchstart', /** @type {EventListener} */ (onStart), { passive: false });
+    }
+
+    window.addEventListener('mousemove', /** @type {EventListener} */ (onMove));
+    window.addEventListener('touchmove', /** @type {EventListener} */ (onMove), { passive: false });
+    window.addEventListener('mouseup', /** @type {EventListener} */ (onEnd));
+    window.addEventListener('touchend', /** @type {EventListener} */ (onEnd));
+
+    b.addEventListener('click', close);
+
+    // Character counter & live minlength validation
+    if(msg instanceof HTMLTextAreaElement && counter){
+      const group = document.getElementById('message-group');
+      const error = document.getElementById('minlength-error');
+      // Character counter only
+      msg.addEventListener('input', () => {
+        counter.textContent = String(msg.value.length);
+        // Remove error visuals while typing
+        group.classList.remove('invalid');
+        error.style.display = 'none';
+      });
+      counter.textContent = String(msg.value.length);
+      // Form submit validation and AJAX
+      if(form instanceof HTMLFormElement){
+        form.addEventListener('submit', function(e){
+          e.preventDefault();
+          if(msg.value.length < 10){
+            group.classList.add('invalid');
+            error.style.display = '';
+            msg.focus();
+            return;
+          }
+          group.classList.remove('invalid');
+          error.style.display = 'none';
+          // Set date/time before submit
+          const dateInput = document.getElementById('contact-date');
+          if(dateInput){
+            const now = new Date();
+            // Format: YYYY-MM-DD HH:mm:ss
+            const pad = n => n.toString().padStart(2, '0');
+            const formatted = `${now.getFullYear()}-${pad(now.getMonth()+1)}-${pad(now.getDate())} ${pad(now.getHours())}:${pad(now.getMinutes())}:${pad(now.getSeconds())}`;
+            dateInput.value = formatted;
+          }
+          // Send via fetch to /api/contact
+          fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form)
+          })
+          .then(res => res.json())
+          .then(data => {
+            if(data.success){
+              showContactNotification('Message sent successfully!', 'Thanks for reaching out — I’ll be in touch.', 'email');
+              form.reset();
+              counter.textContent = '0';
+            }else{
+              showContactNotification('Failed to send message', 'Please try again later.', null);
+            }
+          })
+          .catch(()=>{
+            showContactNotification('Failed to send message', 'Please try again later.', null);
+          });
+        });
+      }
+    }
+
+    // Notification logic
+    function showContactNotification(message, subMessage, type){
+      let n = document.getElementById('contact-notification');
+      if(n) n.remove();
+      n = document.createElement('div');
+      n.id = 'contact-notification';
+      n.style.position = 'fixed';
+      n.style.bottom = '38px';
+      n.style.left = '50%';
+      n.style.transform = 'translateX(-50%)';
+      n.style.zIndex = '9999';
+      n.style.maxWidth = '380px';
+      n.style.width = '100%';
+      n.style.padding = '0 18px';
+      n.innerHTML = `
+        <div style="background:#18181b;border:1.5px solid #6366f1;border-radius:16px;padding:18px 18px 14px;box-shadow:0 8px 32px rgba(0,0,0,0.18);display:flex;align-items:start;gap:14px;">
+          <div style="flex-shrink:0;padding-top:2px;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" fill="#4ade80"/></svg>
+          </div>
+          <div style="flex-grow:1;display:flex;flex-direction:column;gap:6px;">
+            <div style="font-weight:600;color:#fff;font-size:16px;">${message}</div>
+            <div style="color:#a1a1aa;font-size:14px;">${subMessage}</div>
+          </div>
+        </div>
+      `;
+      document.body.appendChild(n);
+      setTimeout(()=>{ n.remove(); }, 3400);
+    }
+
+    // Simple global API (works with full page refresh)
+    window.openContactModal = open;
+    window.closeContactModal = close;
+
+    // Handle any pending open requests
+    if(window.__openContactPending){
+      open();
+      delete window.__openContactPending;
+    }
+
+})();
+</script>

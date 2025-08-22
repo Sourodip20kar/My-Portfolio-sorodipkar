@@ -1,0 +1,138 @@
+---
+import "../styles/global.css";
+import { Font } from "astro:assets";
+import { ViewTransitions } from 'astro:transitions';
+import LoadingIndicator from "astro-loading-indicator/component"
+import SplineScene from "../components/SplineScene";
+import ContactModal from "../components/ContactModal.astro";
+
+const { title, description } = Astro.props;
+
+const defaultTitle = "Sourodip Kar";
+const defaultDescription = "I'm Sourodip Kar, a 22-year-old full-stack developer specializing in AI/ML. Currently interning at ISRO's Space Applications Center (Ahmedabad), where I work on computer vision and ML pipelines for satellite imagery. Passionate about technology, entrepreneurship, and building impactful SaaS products.";
+
+// Get current pathname to determine if we're on contact page
+const pathname = Astro.url.pathname;
+const isContactPage = pathname === '/contact' || pathname === '/contact/';
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/png" href="/download2.png" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title ?? defaultTitle}</title>
+		<meta name="description" content={description ?? defaultDescription} />
+
+		<meta property="og:url" content="https://nikola.fluidinterfaces.com/" />
+		<meta property="og:type" content="website" />
+		<meta property="og:title" content={defaultTitle} />
+		<meta property="og:description" content={defaultDescription} />
+		<meta property="og:image" content="/social-share.png" />
+
+		<!-- Twitter Meta Tags -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta property="twitter:domain" content="nikola.fluidinterfaces.com" />
+		<meta property="twitter:url" content="https://nikola.fluidinterfaces.com/" />
+		<meta name="twitter:title" content={defaultTitle} />
+		<meta name="twitter:description" content={defaultDescription} />
+		<meta name="twitter:image" content="/social-share.png" />
+
+		<!-- Google Fonts -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Audiowide&display=swap" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+		<Font cssVariable="--font-geist" preload />
+		
+		<!-- Only enable ViewTransitions for non-contact pages -->
+		{!isContactPage && <ViewTransitions />}
+		
+		<LoadingIndicator color="#f4f4f5" height="2px" />
+	</head>
+	<body class="font-sans min-h-screen bg-zinc-900">
+		<slot />
+		
+		<!-- Contact modal - always present but only client:load on contact page -->
+		{isContactPage ? (
+			<ContactModal client:load />
+		) : (
+			<ContactModal client:idle />
+		)}
+	</body>
+</html>
+
+<style>
+	html,
+	body {
+		margin: 0;
+		width: 100%;
+		height: 100%;
+		overscroll-behavior: none;
+	}
+</style>
+
+<!-- Modal stub - simplified since contact page will always refresh -->
+<script>
+(function() {
+  if (typeof window === 'undefined') return;
+  
+  // Simple stub for non-contact pages
+  function createModalStub() {
+    if (typeof window.openContactModal !== 'function') {
+      window.openContactModal = function() {
+        // For non-contact pages, navigate to contact page
+        if (window.location.pathname !== '/contact') {
+          window.location.href = '/contact';
+          return;
+        }
+        
+        // On contact page, try to open modal directly
+        try {
+          const modal = document.getElementById('contact-modal');
+          const backdrop = document.getElementById('modal-backdrop');
+          if (modal && backdrop) {
+            modal.classList.add('open');
+            modal.setAttribute('aria-hidden', 'false');
+            backdrop.style.setProperty('--backdrop-opacity', '0.45');
+            backdrop.style.setProperty('--backdrop-blur', '6px');
+            backdrop.classList.add('show');
+            document.body.style.overflow = 'hidden';
+          }
+        } catch (e) {
+          // Fallback: mark as pending for when modal loads
+          window.__openContactPending = true;
+        }
+      };
+    }
+    
+    if (typeof window.closeContactModal !== 'function') {
+      window.closeContactModal = function() {
+        try {
+          const modal = document.getElementById('contact-modal');
+          const backdrop = document.getElementById('modal-backdrop');
+          if (modal && backdrop) {
+            modal.classList.remove('open');
+            modal.setAttribute('aria-hidden', 'true');
+            backdrop.style.setProperty('--backdrop-opacity', '0');
+            backdrop.classList.remove('show');
+            document.body.style.overflow = '';
+          }
+        } catch (e) {
+          console.warn('Could not close modal');
+        }
+      };
+    }
+  }
+
+  // Create stub immediately
+  createModalStub();
+  
+  // Re-create stub after view transitions (for non-contact pages)
+  document.addEventListener('astro:page-load', createModalStub);
+  document.addEventListener('astro:after-swap', createModalStub);
+})();
+</script>
