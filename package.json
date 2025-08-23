@@ -35,5 +35,10 @@
     "@tailwindcss/typography": "^0.5.16",
     "@types/canvas-confetti": "^1.9.0",
     "@vitejs/plugin-react": "^4.7.0"
-  }
+  },
+  "engines": {
+    "node": "22.x",
+    "pnpm": "10.x"
+  },
+  "packageManager": "pnpm@10.13.1"
 }

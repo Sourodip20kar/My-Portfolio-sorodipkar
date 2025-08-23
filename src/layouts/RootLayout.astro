@@ -58,7 +58,7 @@ const isContactPage = pathname === '/contact' || pathname === '/contact/';
 		
 		<!-- Contact modal - always present but only client:load on contact page -->
 		{isContactPage ? (
-			<ContactModal client:load />
+			<ContactModal/>
 		) : (
 			<ContactModal client:idle />
 		)}
