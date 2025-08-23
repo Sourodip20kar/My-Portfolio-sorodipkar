@@ -374,7 +374,7 @@ AI/ML, Computer Vision, Natural Language Processing (NLP), Full-Stack Developmen
 
 Email: COPY{51.sourodipkar2002n.i.t@gmail.com} / COPY{sourodipkar2002@gmail.com}
 Phone: COPY{+91 62917-65291}
-GitHub: [@Sourodip20kar](https://github.com/Sourodip20kar)
+GitHub: [@Sourodip20kar](https://github.com/Sourodip20kar/My-Portfolio-sorodipkar)
 LinkedIn: [/in/sourodip20kar](https://www.linkedin.com/in/sourodip20kar/)
 Twitter (X): [@SourodipKar](https://x.com/SourodipKar)
 Instagram: [@sourodipkar](https://www.instagram.com/sourodipkar/)
