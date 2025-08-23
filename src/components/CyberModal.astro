@@ -1,6 +1,3 @@
----
-// src/components/CyberModal.astro
----
 <button
   class="cyber-btn"
   popovertarget="book-a-call-modal"
@@ -87,7 +84,6 @@
         </p>
       </div>
       
-      <!-- Additional scrollable content -->
       <div class="additional-content">
         <!-- <div class="scroll-indicator">
           <span class="scroll-text">Scroll for more details ↓</span>
@@ -150,6 +146,12 @@
       </span>
       <span>LinkedIn</span>
     </a>
+    <button type="button" class="cyber-btn close-btn-mobile" popovertarget="book-a-call-modal" popovertargetaction="hide" data-action="Close">
+      <span class="backdrop">
+        <span class="corner"></span>
+    </span>
+    <span>Close</span>
+  </button>
   </div>
 </div>
 
@@ -212,6 +214,10 @@
       font-size: 1.2rem;
     }
 
+    .close-btn-mobile {
+      display: none; 
+      --accent: hsla(0, 70%, 75%, 0.847);
+    }
     .cyber-btn * {
       pointer-events: none;
     }
@@ -586,8 +592,8 @@
     }
 
     .body__content {
-      -ms-overflow-style: none;  /* Internet Explorer 10+ */
-      scrollbar-width: none;  /* Firefox */
+      -ms-overflow-style: none;
+      scrollbar-width: none;
     }
 
     .attributes-title {
@@ -628,7 +634,6 @@
       color: inherit;
     }
 
-    /* Info Grid Styles */
     .info-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -643,7 +648,6 @@
       background: hsla(175, 100%, 50%, 0.02);
     }
     
-    /* Add the inner borders */
     .grid-item:nth-child(1), 
     .grid-item:nth-child(2) {
       border-bottom: 1px solid hsla(175, 100%, 50%, 0.2);
@@ -673,7 +677,7 @@
       font-family:'Space Mono', monospace;
     }
 
-    /* Mobile and Small Screen Responsive Styles */
+
     @media (max-width: 768px) {
       .cyber-btn {
         width: 100%;
@@ -717,7 +721,9 @@
         min-height: 40px;
         flex-shrink: 0;
       }
-
+      .modal .modal__actions .close-btn-mobile {
+        display: flex;
+      }
       .profile-section {
         flex-direction: column;
         text-align: center;

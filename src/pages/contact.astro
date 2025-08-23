@@ -10,7 +10,6 @@ const defaultTitle = "Contact - Sourodip Kar";
 const defaultDescription = "Get in touch with Sourodip Kar for new projects and collaborations.";
 ---
 
-<!-- Exclude this page from SPA navigation to force full page refresh -->
 <RootLayout title={defaultTitle} description={defaultDescription}>
      <!-- DotGrid Background -->
      <div class="fixed inset-0 -z-10 dot-grid-container">
@@ -20,9 +19,7 @@ const defaultDescription = "Get in touch with Sourodip Kar for new projects and 
           />
      </div>
 
-     <!-- Main Container - Full viewport height, no scroll -->
      <div class="contact-container">
-          <!-- Central Content Card -->
           <div class="contact-card" style="padding-bottom: 30px;padding-top: 30px;">
                <!-- Border gradient elements -->
                <div class="right-border"></div>
@@ -138,9 +135,8 @@ const defaultDescription = "Get in touch with Sourodip Kar for new projects and 
      <ContactModal/>
 </RootLayout>
 
-<!-- Add this script to exclude this page from SPA navigation -->
 <script>
-  // Mark this page to be excluded from View Transitions
+  
   if (typeof document !== 'undefined') {
     document.documentElement.setAttribute('data-astro-transition-persist', 'false');
     
@@ -153,7 +149,7 @@ const defaultDescription = "Get in touch with Sourodip Kar for new projects and 
 </script>
 
 <style>
-/* Contact Page Styles - Same as before */
+
 .contact-container {
      min-height: 100vh;
      display: flex;
@@ -165,7 +161,7 @@ const defaultDescription = "Get in touch with Sourodip Kar for new projects and 
      z-index: 1;
 }
 
-/* Footer wrapper for proper positioning */
+
 .footer-wrapper {
      position: relative;
      z-index: 10;
@@ -201,7 +197,7 @@ const defaultDescription = "Get in touch with Sourodip Kar for new projects and 
      z-index: 10;
 }
 
-/* Right border gradient */
+
 .right-border {
      position: absolute;
      top: 0;
@@ -212,7 +208,7 @@ const defaultDescription = "Get in touch with Sourodip Kar for new projects and 
      z-index: 2;
 }
 
-/* Bottom border gradient */
+
 .bottom-border {
      position: absolute;
      bottom: -1px;
@@ -234,7 +230,7 @@ const defaultDescription = "Get in touch with Sourodip Kar for new projects and 
      box-shadow: 0 -10px 30px rgba(255, 255, 255, 0.826), 0 -5px 15px rgba(255, 255, 255, 0.958);
 }
 
-/* Header Section */
+
 .contact-header {
      text-align: center;
      margin-bottom: 2rem;
@@ -284,7 +280,7 @@ const defaultDescription = "Get in touch with Sourodip Kar for new projects and 
      clip-path: polygon(0 0, 100% 0, 100% calc(100% - 16px), calc(100% - 16px) 100%, 0 100%);
 }
 
-/* Hover border effects for contact method cards */
+
 .contact-method-card::before {
      content: '';
      position: absolute;
@@ -784,7 +780,6 @@ const defaultDescription = "Get in touch with Sourodip Kar for new projects and 
      }
 }
 
-/* Accessibility */
 @media (prefers-reduced-motion: reduce) {
      * {
           transition: none !important;
@@ -792,7 +787,6 @@ const defaultDescription = "Get in touch with Sourodip Kar for new projects and 
      }
 }
 
-/* High contrast mode */
 @media (prefers-contrast: high) {
      .contact-card {
           border-color: #ffffff;
