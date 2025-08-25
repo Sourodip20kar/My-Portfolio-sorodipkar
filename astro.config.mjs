@@ -10,7 +10,8 @@ import sitemap from "@astrojs/sitemap";
 
 // https://astro.build/config
 export default defineConfig({
-   output: 'server',
+  site: 'https://www.sourodipkar.tech',
+  output: 'server',
   vite: {
     plugins: [tailwindcss()]
   },
