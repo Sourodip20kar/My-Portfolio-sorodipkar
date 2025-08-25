@@ -5,7 +5,7 @@ import { ViewTransitions } from 'astro:transitions';
 import LoadingIndicator from "astro-loading-indicator/component"
 import SplineScene from "../components/SplineScene";
 import ContactModal from "../components/ContactModal.astro";
-
+import Analytics from '@vercel/analytics/astro';
 const { title, description } = Astro.props;
 
 const defaultTitle = "Sourodip Kar";
@@ -62,7 +62,7 @@ const isContactPage = pathname === '/contact' || pathname === '/contact/';
 		) : (
 			<ContactModal/>
 		)}
-	</body>
+    <Analytics />
 </html>
 
 <style>
