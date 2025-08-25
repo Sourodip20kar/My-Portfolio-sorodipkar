@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@astrojs/react": "^4.2.5",
+    "@astrojs/sitemap": "^3.5.1",
     "@astrojs/vercel": "^8.1.4",
     "@paper-design/shaders": "^0.0.45",
     "@paper-design/shaders-react": "^0.0.45",
